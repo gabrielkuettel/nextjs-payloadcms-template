@@ -1,6 +1,6 @@
 # cms
 
-This project was created using create-payload-app using the blog template.
+This project was created using `create-payload-app` using the blog template.
 
 ## How to Use
 
