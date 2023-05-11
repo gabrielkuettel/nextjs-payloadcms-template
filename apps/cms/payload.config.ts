@@ -7,7 +7,7 @@ import Users from './collections/Users'
 import Media from './collections/Media'
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:8000',
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   ...(process.env.PAYLOAD_PUBLIC_SITE_URL
     ? {
         cors: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean),

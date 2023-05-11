@@ -10,7 +10,7 @@
       "dependsOn": ["cms#generate:types", "^build"],
       "env": [
         "MONGODB_URI",
-        "PAYLOAD_PORT",
+        "PORT",
         "PAYLOAD_SECRET",
         "PAYLOAD_PUBLIC_SITE_URL",
         "PAYLOAD_PUBLIC_SERVER_URL"
