@@ -1,27 +1,27 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from 'payload/types'
 
 const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
     defaultColumns: ['title', 'author', 'category', 'tags', 'status'],
-    useAsTitle: 'title',
+    useAsTitle: 'title'
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   fields: [
     {
       name: 'title',
-      type: 'text',
+      type: 'text'
     },
     {
       name: 'author',
       type: 'relationship',
-      relationTo: 'users',
+      relationTo: 'users'
     },
     {
       name: 'publishedDate',
-      type: 'date',
+      type: 'date'
     },
     {
       name: 'category',
@@ -32,7 +32,7 @@ const Posts: CollectionConfig = {
       name: 'tags',
       type: 'relationship',
       relationTo: 'tags',
-      hasMany: true,
+      hasMany: true
     },
     {
       name: 'content',
@@ -44,19 +44,19 @@ const Posts: CollectionConfig = {
       options: [
         {
           value: 'draft',
-          label: 'Draft',
+          label: 'Draft'
         },
         {
           value: 'published',
-          label: 'Published',
-        },
+          label: 'Published'
+        }
       ],
       defaultValue: 'draft',
       admin: {
-        position: 'sidebar',
+        position: 'sidebar'
       }
     }
-  ],
+  ]
 }
 
-export default Posts;
+export default Posts

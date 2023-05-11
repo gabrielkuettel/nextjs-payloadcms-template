@@ -7,15 +7,17 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "cms#build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["cms#generate:types", "^build"],
       "env": ["PAYLOAD_SECRET", "MONGODB_URI"],
-      "outputs": [".dist/**", ".build/**"]
+      "outputs": ["dist/**", "build/**"]
     },
     "lint": {},
     "dev": {
+      "dependsOn": ["cms#generate:types"],
       "cache": false,
       "persistent": true
     },
+    "generate:types": {},
     "check-types": {}
   }
 }

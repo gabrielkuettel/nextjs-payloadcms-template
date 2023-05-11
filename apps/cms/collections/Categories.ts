@@ -1,20 +1,20 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionConfig } from 'payload/types'
 
 const Categories: CollectionConfig = {
   slug: 'categories',
   admin: {
-    useAsTitle: 'name',
+    useAsTitle: 'name'
   },
   access: {
-    read: () => true,
+    read: () => true
   },
   fields: [
     {
       name: 'name',
-      type: 'text',
-    },
+      type: 'text'
+    }
   ],
-  timestamps: false,
+  timestamps: false
 }
 
-export default Categories;
+export default Categories

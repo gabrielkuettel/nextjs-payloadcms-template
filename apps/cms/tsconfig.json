@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/cms.json",
+  "extends": "tsconfig/base.json",
   "include": ["collections"],
   "exclude": ["node_modules", "dist", "build"],
   "ts-node": {
@@ -7,6 +7,13 @@
     "swc": true
   },
   "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "jsx": "react",
+    "paths": {
+      "payload/generated-types": ["./payload-types.ts"]
+    },
     "outDir": "./dist",
     "baseUrl": ".",
   }

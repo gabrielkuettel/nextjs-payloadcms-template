@@ -1,13 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "dotenv -- turbo run build",
+    "build:web": "dotenv -- turbo run build --filter=web",
+    "build:cms": "dotenv -- turbo run build --filter=cms",
+    "dev": "dotenv -- turbo run dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
+    "generate:types": "turbo run generate-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "dotenv-cli": "latest",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "prettier": "^2.5.1",

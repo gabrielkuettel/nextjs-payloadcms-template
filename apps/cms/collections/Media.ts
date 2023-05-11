@@ -1,5 +1,5 @@
-import path from 'path';
-import type { CollectionConfig } from 'payload/types';
+import path from 'path'
+import type { CollectionConfig } from 'payload/types'
 
 const Media: CollectionConfig = {
   slug: 'media',
@@ -12,17 +12,17 @@ const Media: CollectionConfig = {
         height: 400,
         width: 400,
         crop: 'center',
-        name: 'thumbnail',
+        name: 'thumbnail'
       },
       {
         width: 900,
         height: 450,
         crop: 'center',
-        name: 'sixteenByNineMedium',
-      },
-    ],
+        name: 'sixteenByNineMedium'
+      }
+    ]
   },
-  fields: [],
-};
+  fields: []
+}
 
-export default Media;
+export default Media
