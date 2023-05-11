@@ -8,7 +8,13 @@
     },
     "cms#build": {
       "dependsOn": ["cms#generate:types", "^build"],
-      "env": ["PAYLOAD_SECRET", "MONGODB_URI"],
+      "env": [
+        "MONGODB_URI",
+        "CMS_PORT",
+        "CMS_SECRET",
+        "CMS_PUBLIC_SITE_URL",
+        "CMS_PUBLIC_SERVER_URL"
+      ],
       "outputs": ["dist/**", "build/**"]
     },
     "lint": {},

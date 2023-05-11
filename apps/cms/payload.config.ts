@@ -7,7 +7,13 @@ import Users from './collections/Users'
 import Media from './collections/Media'
 
 export default buildConfig({
-  serverURL: 'http://localhost:3002',
+  serverURL: process.env.CMS_PUBLIC_SERVER_URL || 'http://localhost:8000',
+  ...(process.env.CMS_PUBLIC_SITE_URL
+    ? {
+        cors: [process.env.CMS_PUBLIC_SITE_URL].filter(Boolean),
+        csrf: [process.env.CMS_PUBLIC_SITE_URL].filter(Boolean)
+      }
+    : {}),
   admin: {
     user: Users.slug
   },
