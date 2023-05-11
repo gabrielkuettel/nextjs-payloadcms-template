@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "CMS",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "jsx": "react",
+    "paths": {
+      "payload/generated-types": ["./payload-types.ts"]
+    }
+  }
+}

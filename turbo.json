@@ -6,6 +6,11 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "cms#build": {
+      "dependsOn": ["^build"],
+      "env": ["PAYLOAD_SECRET", "MONGODB_URI"],
+      "outputs": [".dist/**", ".build/**"]
+    },
     "lint": {},
     "dev": {
       "cache": false,

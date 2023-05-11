@@ -1,0 +1,13 @@
+{
+  "extends": "tsconfig/cms.json",
+  "include": ["collections"],
+  "exclude": ["node_modules", "dist", "build"],
+  "ts-node": {
+    "transpileOnly": true,
+    "swc": true
+  },
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+  }
+}
