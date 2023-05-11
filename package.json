@@ -4,6 +4,8 @@
     "build": "dotenv -- turbo run build",
     "build:web": "dotenv -- turbo run build --filter=web",
     "build:cms": "dotenv -- turbo run build --filter=cms",
+    "serve:web": "dotenv -- turbo run serve --filter=web",
+    "serve:cms": "dotenv -- turbo run serve --filter=cms",
     "dev": "dotenv -- turbo run dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",

@@ -18,7 +18,6 @@ export interface Config {
 export interface Category {
   id: string
   name?: string
-  type?: string
 }
 export interface Post {
   id: string

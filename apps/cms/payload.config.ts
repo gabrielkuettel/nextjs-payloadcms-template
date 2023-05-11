@@ -7,11 +7,11 @@ import Users from './collections/Users'
 import Media from './collections/Media'
 
 export default buildConfig({
-  serverURL: process.env.CMS_PUBLIC_SERVER_URL || 'http://localhost:8000',
-  ...(process.env.CMS_PUBLIC_SITE_URL
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:8000',
+  ...(process.env.PAYLOAD_PUBLIC_SITE_URL
     ? {
-        cors: [process.env.CMS_PUBLIC_SITE_URL].filter(Boolean),
-        csrf: [process.env.CMS_PUBLIC_SITE_URL].filter(Boolean)
+        cors: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean),
+        csrf: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean)
       }
     : {}),
   admin: {

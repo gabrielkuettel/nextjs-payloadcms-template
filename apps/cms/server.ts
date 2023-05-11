@@ -12,7 +12,7 @@ app.get('/', (_, res) => {
 const start = async () => {
   // Initialize Payload
   await payload.init({
-    secret: process.env.CMS_SECRET || 'supersecret',
+    secret: process.env.PAYLOAD_SECRET || 'supersecret',
     mongoURL: process.env.MONGODB_URI || 'mongodb://localhost/cms',
     express: app,
     onInit: async () => {
@@ -22,7 +22,7 @@ const start = async () => {
 
   // Add your own express routes here
 
-  app.listen(process.env.CMS_PORT || 8000)
+  app.listen(process.env.PAYLOAD_PORT || 8000)
 }
 
 start()

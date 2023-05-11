@@ -1,6 +1,11 @@
 {
   "extends": "tsconfig/base.json",
-  "include": ["collections"],
+  "include": [
+    "server.ts",
+    "payload.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
   "exclude": ["node_modules", "dist", "build"],
   "ts-node": {
     "transpileOnly": true,

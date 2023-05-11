@@ -10,13 +10,14 @@
       "dependsOn": ["cms#generate:types", "^build"],
       "env": [
         "MONGODB_URI",
-        "CMS_PORT",
-        "CMS_SECRET",
-        "CMS_PUBLIC_SITE_URL",
-        "CMS_PUBLIC_SERVER_URL"
+        "PAYLOAD_PORT",
+        "PAYLOAD_SECRET",
+        "PAYLOAD_PUBLIC_SITE_URL",
+        "PAYLOAD_PUBLIC_SERVER_URL"
       ],
       "outputs": ["dist/**", "build/**"]
     },
+    "serve": {},
     "lint": {},
     "dev": {
       "dependsOn": ["cms#generate:types"],
