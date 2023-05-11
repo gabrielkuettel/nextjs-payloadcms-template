@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "cp -Rf ./.next ./../../.next",
     "serve": "next start",
     "lint": "next lint",
     "check-types": "tsc --noEmit"
