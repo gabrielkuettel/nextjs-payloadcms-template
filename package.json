@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "dotenv -- turbo run build",
+    "serve": "dotenv -- turbo run serve",
     "build:web": "dotenv -- turbo run build --filter=web",
     "build:cms": "dotenv -- turbo run build --filter=cms",
     "serve:web": "dotenv -- turbo run serve --filter=web",

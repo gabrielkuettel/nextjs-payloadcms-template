@@ -9,7 +9,7 @@
     "build:payload": "cross-env PAYLOAD_CONFIG_PATH=./payload.config.ts payload build",
     "build:server": "tsc",
     "build": "npm run copyfiles && npm run build:payload && npm run build:server",
-    "postbuild": "cp -Rf ./dist ./../../dist && cp -Rf ./build ./../../build",
+    "postbuild": "cp -Rf ./dist ./../../dist && cp -Rf ./build ./../../dist && cp -Rf ./node_modules ./../../node_modules",
     "serve": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
     "lint": "eslint \"**/*.ts*\" --ignore-pattern \"dist/*\"",
     "copyfiles": "copyfiles -u 1 \"./**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
