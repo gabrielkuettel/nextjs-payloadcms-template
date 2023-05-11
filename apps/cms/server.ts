@@ -10,7 +10,6 @@ app.get('/', (_, res) => {
 })
 
 const start = async () => {
-  // Initialize Payload
   await payload.init({
     secret: process.env.PAYLOAD_SECRET || 'supersecret',
     mongoURL: process.env.MONGODB_URI || 'mongodb://localhost/cms',
