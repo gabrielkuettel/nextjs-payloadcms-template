@@ -39,7 +39,10 @@ export function Author({
             )}
             width={64}
             height={64}
-            src={avatarSrc}
+            src={
+              'https://nextjs-payloadcms-template-68ef096.payloadcms.app' +
+              avatarSrc
+            }
             alt={avatarAlt}
           />
         </div>
