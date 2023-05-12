@@ -1,5 +1,7 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     // app content
@@ -10,10 +12,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brandblue: colors.blue[500],
-        brandred: colors.red[500]
+        primary: colors.cyan,
+        secondary: colors.red,
+        neutral: colors.slate
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans]
       }
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio')
+  ]
 }

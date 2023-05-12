@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation'
 
-import { getPage } from './queries'
 import { getPageSlug } from '@/utilities/getPageSlug'
-import { Container } from '@/components/Container'
-import { Blocks } from '@/blocks/Blocks'
+import { getPage } from './queries'
+import { Post } from '@/components/Post'
 
 type PageProps = {
   params: { slug: string | string[] }
@@ -12,19 +11,21 @@ type PageProps = {
 
 export default async function Page(props: PageProps) {
   const slug = getPageSlug(props.params.slug)
-  const pageData = getPage({ slug })
+  const [postPage] = await Promise.all([getPage({ slug })])
 
-  const [page] = await Promise.all([pageData])
+  console.log(postPage)
 
-  if (!page) {
+  if (!postPage) {
     notFound()
   }
 
   return (
-    <main>
-      <Container>
-        <Blocks blocks={page.layout} />
-      </Container>
-    </main>
+    <article>
+      <Post
+        post={postPage.post}
+        primaryTag={postPage.primaryTag}
+        relatedPosts={postPage.relatedPosts}
+      />
+    </article>
   )
 }

@@ -6,7 +6,10 @@ import type {
   Tag,
   Media
 } from './payload-types'
+
 export * from './payload-types'
+
+export { PayloadPage, PayloadPost, PayloadUser }
 
 export type PaginatedDocs<T = any> = {
   docs: T[]

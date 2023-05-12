@@ -1,7 +1,7 @@
 import { Post } from 'types'
 
 export const mapPosts = (posts: Post[]) => {
-  return posts.map((post) => {
+  return posts?.map((post) => {
     const slug = post.slug || ''
     const title = post.title || ''
     const publishedDate = post.publishedDate || ''
@@ -19,9 +19,10 @@ export const mapPosts = (posts: Post[]) => {
     }
 
     const author = {
-      name: post.author?.name || '',
-      slug: post.author?.slug || '',
-      imageUrl: post.author?.avatar?.url || ''
+      name: typeof post.author !== 'string' ? post.author?.name || '' : '',
+      slug: typeof post.author !== 'string' ? post.author?.slug || '' : '',
+      imageUrl:
+        typeof post.author !== 'string' ? post.author?.avatar?.url || '' : ''
     }
 
     return {
