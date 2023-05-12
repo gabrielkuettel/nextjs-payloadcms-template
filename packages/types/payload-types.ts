@@ -7,94 +7,95 @@
 
 export interface Config {
   collections: {
-    pages: Page;
-    categories: Category;
-    posts: Post;
-    tags: Tag;
-    users: User;
-    media: Media;
-  };
-  globals: {};
+    pages: Page
+    categories: Category
+    posts: Post
+    tags: Tag
+    users: User
+    media: Media
+  }
+  globals: {}
 }
 export interface Page {
-  id: string;
-  title: string;
+  id: string
+  title: string
   layout: {
-    show?: '3' | '6' | '9';
-    id?: string;
-    blockName?: string;
-    blockType: 'blogSection';
-  }[];
-  slug?: string;
-  updatedAt: string;
-  createdAt: string;
-  _status?: 'draft' | 'published';
+    show?: '3' | '6' | '9'
+    id?: string
+    blockName?: string
+    blockType: 'blogSection'
+  }[]
+  slug?: string
+  updatedAt: string
+  createdAt: string
+  _status?: 'draft' | 'published'
 }
 export interface Category {
-  id: string;
-  name?: string;
+  id: string
+  name?: string
 }
 export interface Post {
-  id: string;
-  slug?: string;
-  title?: string;
-  author?: string | User;
-  publishedDate?: string;
-  image?: string | Media;
-  category?: string | Category;
-  tags?: string[] | Tag[];
+  id: string
+  slug?: string
+  title?: string
+  author?: string | User
+  publishedDate?: string
+  image?: string | Media
+  category?: string | Category
+  tags?: string[] | Tag[]
   content?: {
-    [k: string]: unknown;
-  }[];
-  updatedAt: string;
-  createdAt: string;
-  _status?: 'draft' | 'published';
+    [k: string]: unknown
+  }[]
+  updatedAt: string
+  createdAt: string
+  _status?: 'draft' | 'published'
 }
 export interface User {
-  id: string;
-  slug?: string;
-  name?: string;
-  avatar: string | Media;
-  updatedAt: string;
-  createdAt: string;
-  email?: string;
-  resetPasswordToken?: string;
-  resetPasswordExpiration?: string;
-  loginAttempts?: number;
-  lockUntil?: string;
-  password?: string;
+  id: string
+  slug?: string
+  name?: string
+  avatar: string | Media
+  updatedAt: string
+  createdAt: string
+  email?: string
+  resetPasswordToken?: string
+  resetPasswordExpiration?: string
+  loginAttempts?: number
+  lockUntil?: string
+  password?: string
 }
 export interface Media {
-  id: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string;
-  filename?: string;
-  mimeType?: string;
-  filesize?: number;
-  width?: number;
-  height?: number;
+  id: string
+  alt: string
+  updatedAt: string
+  createdAt: string
+  url?: string
+  filename?: string
+  mimeType?: string
+  filesize?: number
+  width?: number
+  height?: number
   sizes?: {
-    thumbnail?: {
-      url?: string;
-      width?: number;
-      height?: number;
-      mimeType?: string;
-      filesize?: number;
-      filename?: string;
-    };
-    sixteenByNineMedium?: {
-      url?: string;
-      width?: number;
-      height?: number;
-      mimeType?: string;
-      filesize?: number;
-      filename?: string;
-    };
-  };
+    card?: {
+      url?: string
+      width?: number
+      height?: number
+      mimeType?: string
+      filesize?: number
+      filename?: string
+    }
+    feature?: {
+      url?: string
+      width?: number
+      height?: number
+      mimeType?: string
+      filesize?: number
+      filename?: string
+    }
+  }
 }
 export interface Tag {
-  id: string;
-  slug?: string;
-  name?: string;
+  id: string
+  slug?: string
+  name?: string
 }

@@ -13,6 +13,8 @@ export const Media: CollectionConfig = {
     read: (): boolean => true // Everyone can read Media
   },
   upload: {
+    staticURL: '/media',
+    staticDir: 'media',
     adminThumbnail: 'card',
     imageSizes: [
       {

@@ -1,4 +1,4 @@
-import { RichTextElement } from 'payload/dist/fields/config/types';
+import { RichTextElement } from 'payload/dist/fields/config/types'
 
 const elements: RichTextElement[] = [
   'blockquote',
@@ -7,7 +7,7 @@ const elements: RichTextElement[] = [
   'h4',
   'h5',
   'h6',
-  'link',
-];
+  'link'
+]
 
-export default elements;
+export default elements

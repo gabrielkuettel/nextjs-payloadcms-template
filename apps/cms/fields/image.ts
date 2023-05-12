@@ -4,5 +4,8 @@ export const image: Field = {
   name: 'image',
   label: 'Image',
   type: 'upload',
-  relationTo: 'media'
+  relationTo: 'media',
+  filterOptions: {
+    mimeType: { contains: 'image' }
+  }
 }
