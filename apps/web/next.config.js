@@ -2,6 +2,12 @@ module.exports = {
   reactStrictMode: true,
   transpilePackages: ['ui'],
   images: {
-    domains: ['localhost', 'payloadcms.app', process.env.NEXT_PUBLIC_CMS_URL]
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nextjs-payloadcms-template-68ef096.payloadcms.app'
+      }
+    ],
+    domains: ['localhost']
   }
 }
