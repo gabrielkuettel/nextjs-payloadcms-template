@@ -1,5 +1,9 @@
 import { CollectionConfig } from 'payload/types'
 
+import { publishedOnly } from '../access/publishedOnly'
+import { slugField } from '../fields/slug'
+import { image } from '../fields/image'
+
 const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
@@ -7,9 +11,13 @@ const Posts: CollectionConfig = {
     useAsTitle: 'title'
   },
   access: {
-    read: () => true
+    read: publishedOnly
+  },
+  versions: {
+    drafts: true
   },
   fields: [
+    slugField('title'),
     {
       name: 'title',
       type: 'text'
@@ -23,6 +31,7 @@ const Posts: CollectionConfig = {
       name: 'publishedDate',
       type: 'date'
     },
+    image,
     {
       name: 'category',
       type: 'relationship',
@@ -37,24 +46,6 @@ const Posts: CollectionConfig = {
     {
       name: 'content',
       type: 'richText'
-    },
-    {
-      name: 'status',
-      type: 'select',
-      options: [
-        {
-          value: 'draft',
-          label: 'Draft'
-        },
-        {
-          value: 'published',
-          label: 'Published'
-        }
-      ],
-      defaultValue: 'draft',
-      admin: {
-        position: 'sidebar'
-      }
     }
   ]
 }

@@ -10,7 +10,7 @@
     "dev": "dotenv -- turbo run dev",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
-    "generate:types": "turbo run generate-types",
+    "generate:types": "turbo run generate:types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

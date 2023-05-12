@@ -1,4 +1,5 @@
 import { CollectionConfig } from 'payload/types'
+import { slugField } from '../fields/slug'
 
 const Tags: CollectionConfig = {
   slug: 'tags',
@@ -9,6 +10,7 @@ const Tags: CollectionConfig = {
     read: () => true
   },
   fields: [
+    slugField('name'),
     {
       name: 'name',
       type: 'text'
