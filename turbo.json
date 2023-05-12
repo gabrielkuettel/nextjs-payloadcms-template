@@ -6,6 +6,11 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "build#web": {
+      "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_CMS_URL"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
     "cms#build": {
       "dependsOn": ["cms#generate:types", "^build"],
       "env": [
