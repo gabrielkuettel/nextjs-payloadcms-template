@@ -15,6 +15,7 @@ export const Media: CollectionConfig = {
   upload: {
     staticURL: '/media',
     staticDir: 'media',
+    mimeTypes: ['image/*', 'video/*'],
     adminThumbnail: 'card',
     imageSizes: [
       {
