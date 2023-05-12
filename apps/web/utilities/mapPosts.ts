@@ -11,8 +11,7 @@ export const mapPosts = (posts: Post[]) => {
         .map((child) => child.text)
         .join(' ') || ''
 
-    const imageUrl =
-      (process.env.NEXT_PUBLIC_CMS_URL || '') + post.image?.url || ''
+    const imageUrl = post.image?.url || ''
 
     const primaryTag = {
       name: (post.tags && post.tags[0]?.name) || '',
@@ -22,8 +21,7 @@ export const mapPosts = (posts: Post[]) => {
     const author = {
       name: post.author?.name || '',
       slug: post.author?.slug || '',
-      imageUrl:
-        (process.env.NEXT_PUBLIC_CMS_URL || '') + post.author?.avatar?.url || ''
+      imageUrl: post.author?.avatar?.url || ''
     }
 
     return {

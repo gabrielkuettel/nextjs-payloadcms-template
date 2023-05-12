@@ -16,6 +16,7 @@ build
 # payloadcms
 dist
 build
+media 
 
 # misc
 .DS_Store

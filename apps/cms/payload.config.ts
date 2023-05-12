@@ -10,12 +10,12 @@ import Media from './collections/Media'
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  // ...(process.env.PAYLOAD_PUBLIC_SITE_URL
-  //   ? {
-  //       cors: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean),
-  //       csrf: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean)
-  //     }
-  //   : {}),
+  ...(process.env.PAYLOAD_PUBLIC_SITE_URL
+    ? {
+        cors: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean),
+        csrf: [process.env.PAYLOAD_PUBLIC_SITE_URL].filter(Boolean)
+      }
+    : {}),
   admin: {
     user: Users.slug
   },
