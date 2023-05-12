@@ -3,16 +3,16 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["cms#generate:types", "^build", "format"],
+      "dependsOn": ["cms#generate:types", "lint", "^build", "format"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build#web": {
-      "dependsOn": ["cms#generate:types", "^build", "format"],
+      "dependsOn": ["cms#generate:types", "lint", "^build", "format"],
       "env": ["NEXT_PUBLIC_CMS_URL"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "cms#build": {
-      "dependsOn": ["cms#generate:types", "^build", "format"],
+      "dependsOn": ["cms#generate:types", "lint", "^build", "format"],
       "env": [
         "MONGODB_URI",
         "PORT",
@@ -26,11 +26,10 @@
     "serve": {},
     "lint": {},
     "format": {
-      "dependsOn": ["^build"],
-      "outputs": []
+      "dependsOn": ["^cms#generate:types"]
     },
     "dev": {
-      "dependsOn": ["cms#generate:types"],
+      "dependsOn": ["cms#generate:types", "lint", "format"],
       "cache": false,
       "persistent": true
     },

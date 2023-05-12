@@ -8,6 +8,7 @@
     "postbuild": "cp -Rf ./.next ./../../.next",
     "serve": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
