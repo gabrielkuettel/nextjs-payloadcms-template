@@ -14,8 +14,7 @@ out/
 build
 
 # payloadcms
-dist
-*/**/dist
+dist*
 build
 media 
 
