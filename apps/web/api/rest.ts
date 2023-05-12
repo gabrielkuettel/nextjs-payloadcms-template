@@ -1,11 +1,11 @@
-import type { User } from 'types'
+import type { PaginatedDocs } from 'types'
 
-export const rest = async (
+export const rest = async <T>(
   endpoint: string,
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE' = 'GET',
   body?: any,
   options?: Omit<RequestInit, 'method'>
-): Promise<User | null> => {
+): Promise<PaginatedDocs<T> | null> => {
   const url = `${process.env.NEXT_PUBLIC_CMS_URL}/api/${endpoint}`
 
   try {
@@ -18,7 +18,7 @@ export const rest = async (
         ...options?.headers
       },
       next: {
-        revalidate: 0
+        revalidate: 10
       },
       ...options
     })

@@ -1,15 +1,15 @@
 import { Header } from 'ui'
+import { User } from 'types'
 
 import { Button } from '@/components/Button'
-import { rest } from '@/cms/rest'
+import { rest } from '@/api/rest'
 
 export default async function Page() {
-  const data = await rest('users')
+  const data = await rest<User>('users')
 
   return (
     <>
-      <pre>{JSON.stringify(data)}</pre>
-      <Header text="Web" />
+      <Header text={data?.docs[0].name || 'default'} />
       <Button />
     </>
   )
