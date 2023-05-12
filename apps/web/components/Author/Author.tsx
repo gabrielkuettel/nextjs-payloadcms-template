@@ -44,7 +44,6 @@ export function Author({
               avatarSrc
             }
             alt={avatarAlt}
-            unoptimized
           />
         </div>
         <div className="ml-3">
