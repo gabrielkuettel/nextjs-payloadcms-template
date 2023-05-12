@@ -21,7 +21,7 @@ const start = async () => {
 
   // Add your own express routes here
 
-  app.listen(process.env.PORT || process.env.PAYLOAD_LOCAL_PORT || 4000)
+  app.listen(process.env.PORT || process.env.PAYLOAD_LOCAL_PORT)
 }
 
 start()
