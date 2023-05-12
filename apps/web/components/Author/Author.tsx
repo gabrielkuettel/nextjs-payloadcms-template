@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { formatMediaURL } from '@/utilities/formaMediaURL'
+
 type AuthorProps = {
   avatarSrc: string
   avatarAlt: string
@@ -39,10 +41,7 @@ export function Author({
             )}
             width={64}
             height={64}
-            src={
-              'https://nextjs-payloadcms-template-68ef096.payloadcms.app' +
-              avatarSrc
-            }
+            src={formatMediaURL(avatarSrc)}
             alt={avatarAlt}
           />
         </div>
