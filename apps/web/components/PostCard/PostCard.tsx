@@ -35,7 +35,10 @@ export const PostCard: React.FC<PostProps> = ({
       <div className="relative aspect-[16/9] w-full rounded-2xl bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
         <Link href={`/blog/${slug}`}>
           <Image
-            src={imageUrl}
+            src={
+              'https://nextjs-payloadcms-template-68ef096.payloadcms.app' +
+              imageUrl
+            }
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 33vw"
