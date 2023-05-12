@@ -9,12 +9,13 @@ node_modules
 coverage
 
 # next.js
-.next/
+.next
 out/
 build
 
 # payloadcms
 dist
+*/**/dist
 build
 media 
 
