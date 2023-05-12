@@ -1,31 +1,33 @@
-import path from 'path'
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig, Field } from 'payload/types'
 
-const Media: CollectionConfig = {
+const alt: Field = {
+  name: 'alt',
+  label: 'Alt Text',
+  type: 'text',
+  required: true
+}
+
+export const Media: CollectionConfig = {
   slug: 'media',
   access: {
-    read: () => true
+    read: (): boolean => true // Everyone can read Media
   },
   upload: {
-    staticDir: path.resolve(__dirname, '../../../media'),
-    // Specify the size name that you'd like to use as admin thumbnail
-    adminThumbnail: 'thumbnail',
+    adminThumbnail: 'card',
     imageSizes: [
       {
-        height: 400,
-        width: 400,
-        crop: 'center',
-        name: 'thumbnail'
+        name: 'card',
+        width: 640,
+        height: 480
       },
       {
-        width: 900,
-        height: 450,
-        crop: 'center',
-        name: 'sixteenByNineMedium'
+        name: 'feature',
+        width: 1024,
+        height: 576
       }
     ]
   },
-  fields: []
+  fields: [alt]
 }
 
 export default Media
