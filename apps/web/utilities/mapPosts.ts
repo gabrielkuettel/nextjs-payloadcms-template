@@ -14,7 +14,8 @@ export const mapPosts = (posts: Post[]) => {
     console.log('title', title, post.content?.[0])
     console.log('excerpt', excerpt)
 
-    const imageUrl = post.image?.url || ''
+    const imageUrl =
+      (process.env.NEXT_PUBLIC_CMS_URL || '') + post.image?.url || ''
 
     const primaryTag = {
       name: (post.tags && post.tags[0]?.name) || '',
