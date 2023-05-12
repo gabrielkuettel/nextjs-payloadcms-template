@@ -17,6 +17,9 @@ export const rest = async (
         'Content-Type': 'application/json',
         ...options?.headers
       },
+      next: {
+        revalidate: 0
+      },
       ...options
     })
 
