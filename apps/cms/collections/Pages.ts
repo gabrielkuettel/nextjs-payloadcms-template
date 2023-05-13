@@ -1,6 +1,8 @@
 import { CollectionConfig } from 'payload/types'
 import { publishedOnly } from '../access/publishedOnly'
 import { BlogSection } from '../blocks/BlogSection'
+import { HeaderSection } from '../blocks/HeaderSection'
+import { Hero } from '../blocks/Hero'
 import { slugField } from '../fields/slug'
 
 export const Pages: CollectionConfig = {
@@ -31,7 +33,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [BlogSection]
+              blocks: [Hero, HeaderSection, BlogSection]
             }
           ]
         }

@@ -34,16 +34,16 @@ export const PostCard: React.FC<PostProps> = ({
 }) => {
   return (
     <article className="flex flex-col items-start">
-      <div className="relative aspect-[16/9] w-full rounded-2xl bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
+      <div className="relative aspect-[16/9] w-full bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
         <Link href={`/blog/${slug}`}>
           <Image
             src={formatMediaURL(imageUrl)}
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 33vw"
-            className="rounded-2xl object-cover"
+            className="object-cover"
           />
-          <div className="absolute inset-0 rounded-2xl" />
+          <div className="absolute inset-0" />
         </Link>
       </div>
       <div className="max-w-xl">

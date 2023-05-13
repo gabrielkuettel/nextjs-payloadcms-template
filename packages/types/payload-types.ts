@@ -21,20 +21,60 @@ export interface Config {
 export interface Page {
   id: string
   title: string
-  layout: {
-    show?: '3' | '6' | '9'
-    id?: string
-    blockName?: string
-    blockType: 'blogSection'
-  }[]
+  layout: (
+    | {
+        horizontalPadding?: boolean
+        topPadding?: boolean
+        bottomPadding?: boolean
+        featuredPost?: string | Post
+        title?: string
+        description?: string
+        primaryAction: {
+          type?: 'reference' | 'custom'
+          reference: {
+            value: string | Page
+            relationTo: 'pages'
+          }
+          url: string
+          label: string
+        }
+        secondaryAction: {
+          type?: 'reference' | 'custom'
+          reference: {
+            value: string | Page
+            relationTo: 'pages'
+          }
+          url: string
+          label: string
+        }
+        id?: string
+        blockName?: string
+        blockType: 'hero'
+      }
+    | {
+        horizontalPadding?: boolean
+        topPadding?: boolean
+        bottomPadding?: boolean
+        title?: string
+        description?: string
+        id?: string
+        blockName?: string
+        blockType: 'headerSection'
+      }
+    | {
+        horizontalPadding?: boolean
+        topPadding?: boolean
+        bottomPadding?: boolean
+        show?: '3' | '6' | '9'
+        id?: string
+        blockName?: string
+        blockType: 'blogSection'
+      }
+  )[]
   slug?: string
   updatedAt: string
   createdAt: string
   _status?: 'draft' | 'published'
-}
-export interface Category {
-  id: string
-  name?: string
 }
 export interface Post {
   id: string
@@ -96,6 +136,10 @@ export interface Media {
     }
   }
 }
+export interface Category {
+  id: string
+  name?: string
+}
 export interface Tag {
   id: string
   slug?: string
@@ -106,7 +150,6 @@ export interface MainMenu {
   navItems: {
     link: {
       type?: 'reference' | 'custom'
-      newTab?: boolean
       reference: {
         value: string | Page
         relationTo: 'pages'

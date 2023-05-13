@@ -12,7 +12,7 @@ export function HeaderSection({
   title,
   description,
   className,
-  centered = false
+  centered = true
 }: SectionHeadingProps) {
   return (
     <div
@@ -22,9 +22,7 @@ export function HeaderSection({
         className
       )}
     >
-      <h2 className="text-3xl font-bold tracking-tight text-green-400 sm:text-4xl">
-        {title}
-      </h2>
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
       <p className="mt-2 text-lg leading-8 text-neutral-600">{description}</p>
     </div>
   )

@@ -32,7 +32,6 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
         <header>
-          {/* <pre>{JSON.stringify(mainMenu, null, 2)}</pre> */}
           <MainMenu navigation={navigation} />
         </header>
         {children}

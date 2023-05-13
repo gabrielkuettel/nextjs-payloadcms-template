@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 
 import { getPage } from './queries'
 import { getPageSlug } from '@/utilities/getPageSlug'
-import { Container } from '@/components/Container'
 import { Blocks } from '@/blocks/Blocks'
 
 type PageProps = {
@@ -22,9 +21,7 @@ export default async function Page(props: PageProps) {
 
   return (
     <main>
-      <Container>
-        <Blocks blocks={page.layout} />
-      </Container>
+      <Blocks blocks={page.layout} />
     </main>
   )
 }

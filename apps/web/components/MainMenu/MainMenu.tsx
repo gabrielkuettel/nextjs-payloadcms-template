@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -22,13 +22,14 @@ export const MainMenu: React.FC<MenuProps> = ({ navigation }) => {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            {/* <Image
+            <Image
               width={32}
               height={32}
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              src="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=600"
               alt=""
-            /> */}
+              unoptimized
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -56,6 +57,8 @@ export const MainMenu: React.FC<MenuProps> = ({ navigation }) => {
           {/*eslint-disable-next-line @next/next/no-html-link-for-pages*/}
           <a
             href={process.env.NEXT_PUBLIC_CMS_URL + '/admin'}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Log in <span aria-hidden="true">&rarr;</span>
@@ -104,6 +107,8 @@ export const MainMenu: React.FC<MenuProps> = ({ navigation }) => {
               <div className="py-6">
                 <a
                   href={process.env.NEXT_PUBLIC_CMS_URL + '/admin'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in

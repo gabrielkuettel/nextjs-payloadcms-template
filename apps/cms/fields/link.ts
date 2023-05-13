@@ -57,18 +57,18 @@ const link: LinkType = ({
               layout: 'horizontal',
               width: '50%'
             }
-          },
-          {
-            name: 'newTab',
-            label: 'Open in new tab',
-            type: 'checkbox',
-            admin: {
-              width: '50%',
-              style: {
-                alignSelf: 'flex-end'
-              }
-            }
           }
+          // {
+          //   name: 'newTab',
+          //   label: 'Open in new tab',
+          //   type: 'checkbox',
+          //   admin: {
+          //     width: '50%',
+          //     style: {
+          //       alignSelf: 'flex-end'
+          //     }
+          //   }
+          // }
         ]
       }
     ]

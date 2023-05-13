@@ -1,8 +1,11 @@
 import { Block } from 'payload/types'
 
+import { padding } from '../fields/padding'
+
 export const BlogSection: Block = {
   slug: 'blogSection',
   fields: [
+    padding,
     {
       name: 'show',
       label: 'Number of Posts to Show',
