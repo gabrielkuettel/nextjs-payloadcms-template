@@ -1,5 +1,6 @@
 import qs from 'qs'
-import { Page } from 'types'
+import { Page, PaginatedDocs } from 'types'
+
 import { rest } from '@/api/rest'
 
 export async function getPage({ slug }: { slug: string }) {
@@ -12,6 +13,6 @@ export async function getPage({ slug }: { slug: string }) {
     }
   })
 
-  const page = await rest<Page>(collection + '?' + query)
+  const page = await rest<PaginatedDocs<Page>>(collection + '?' + query)
   return page?.docs[0]
 }

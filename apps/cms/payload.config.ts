@@ -7,6 +7,7 @@ import Posts from './collections/Posts'
 import Tags from './collections/Tags'
 import Users from './collections/Users'
 import Media from './collections/Media'
+import { MainMenu } from './globals/MainMenu'
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
@@ -20,6 +21,7 @@ export default buildConfig({
     user: Users.slug
   },
   collections: [Pages, Categories, Posts, Tags, Users, Media],
+  globals: [MainMenu],
   typescript: {
     outputFile: path.resolve(__dirname, '../../packages/types/payload-types.ts')
   },

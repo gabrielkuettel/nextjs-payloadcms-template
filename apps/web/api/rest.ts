@@ -1,11 +1,9 @@
-import type { PaginatedDocs } from 'types'
-
 export const rest = async <T>(
   endpoint: string,
   method: 'GET' | 'POST' | 'PATCH' | 'DELETE' = 'GET',
   body?: any,
   options?: Omit<RequestInit, 'method'>
-): Promise<PaginatedDocs<T> | null> => {
+): Promise<T | null> => {
   const url = `${process.env.NEXT_PUBLIC_CMS_URL}/api/${endpoint}`
 
   try {

@@ -14,7 +14,9 @@ export interface Config {
     users: User
     media: Media
   }
-  globals: {}
+  globals: {
+    'main-menu': MainMenu
+  }
 }
 export interface Page {
   id: string
@@ -98,4 +100,20 @@ export interface Tag {
   id: string
   slug?: string
   name?: string
+}
+export interface MainMenu {
+  id: string
+  navItems: {
+    link: {
+      type?: 'reference' | 'custom'
+      newTab?: boolean
+      reference: {
+        value: string | Page
+        relationTo: 'pages'
+      }
+      url: string
+      label: string
+    }
+    id?: string
+  }[]
 }

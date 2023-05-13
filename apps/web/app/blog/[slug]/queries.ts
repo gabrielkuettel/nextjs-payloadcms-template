@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { Post } from 'types'
+import { Post, PaginatedDocs } from 'types'
 
 import { rest } from '@/api/rest'
 
@@ -13,7 +13,7 @@ export async function getPost({ slug }: { slug: string }) {
     }
   })
 
-  const postData = await rest<Post>(collection + '?' + query)
+  const postData = await rest<PaginatedDocs<Post>>(collection + '?' + query)
   const post = postData?.docs[0]
 
   return post
@@ -46,7 +46,7 @@ export async function getRelatedPosts({
     }
   })
 
-  const postData = await rest<Post[]>(collection + '?' + query)
+  const postData = await rest<PaginatedDocs<Post[]>>(collection + '?' + query)
   const post = postData?.docs[0]
 
   return post
