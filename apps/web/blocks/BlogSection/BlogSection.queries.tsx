@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { Post } from 'types'
+import { Post, PaginatedDocs } from 'types'
 import { rest } from '@/api/rest'
 
 export async function getPosts({ limit = 3 }) {
@@ -9,6 +9,6 @@ export async function getPosts({ limit = 3 }) {
     limit
   })
 
-  const posts = await rest<Post>(collection + '?' + query)
+  const posts = await rest<PaginatedDocs<Post>>(collection + '?' + query)
   return posts?.docs
 }
