@@ -1,8 +1,14 @@
 import { Field } from 'payload/types'
 
-export const padding: Field = {
+export const display: Field = {
   type: 'row',
   fields: [
+    {
+      name: 'fullWidth',
+      type: 'checkbox',
+      label: 'Full Width',
+      defaultValue: false
+    },
     {
       name: 'horizontalPadding',
       type: 'checkbox',

@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 
 import { getPage } from './queries'
 import { MainMenu } from '@/components/MainMenu'
+import { Footer } from '@/components/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,6 +36,9 @@ export default async function RootLayout({
           <MainMenu navigation={navigation} />
         </header>
         {children}
+        <footer>
+          <Footer navigation={navigation} />
+        </footer>
       </body>
     </html>
   )

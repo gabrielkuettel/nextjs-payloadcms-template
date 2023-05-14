@@ -9,6 +9,7 @@ export type HeaderSectionProps = {
   horizontalPadding?: boolean
   bottomPadding?: boolean
   topPadding?: boolean
+  fullWidth?: boolean
 }
 
 export const HeaderSection: React.FC<HeaderSectionProps> = ({
@@ -16,13 +17,15 @@ export const HeaderSection: React.FC<HeaderSectionProps> = ({
   description,
   horizontalPadding,
   bottomPadding,
-  topPadding
+  topPadding,
+  fullWidth
 }) => {
   return (
     <Container
       horizontalPadding={horizontalPadding}
       bottomPadding={bottomPadding}
       topPadding={topPadding}
+      fullWidth={fullWidth}
     >
       <HeaderSectionComponent title={title} description={description} />
     </Container>

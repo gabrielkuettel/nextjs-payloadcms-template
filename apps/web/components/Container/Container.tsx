@@ -5,6 +5,7 @@ type ContainerProps = {
   topPadding?: boolean
   bottomPadding?: boolean
   horizontalPadding?: boolean
+  fullWidth?: boolean
   children: React.ReactNode
 }
 
@@ -13,7 +14,8 @@ export function Container(props: ContainerProps) {
     className,
     topPadding = false,
     bottomPadding = false,
-    horizontalPadding = false,
+    horizontalPadding = true,
+    fullWidth = false,
     children,
     ...rest
   } = props
@@ -21,7 +23,8 @@ export function Container(props: ContainerProps) {
   return (
     <div
       className={clsx(
-        'mx-auto max-w-7xl bg-white',
+        'mx-auto bg-white',
+        fullWidth === false ? 'max-w-7xl' : '',
         topPadding && 'pt-16 sm:pt-24 lg:pt-32',
         bottomPadding && 'pb-16 sm:pb-24 lg:pb-32',
         horizontalPadding && 'px-4 sm:px-6 lg:px-8',

@@ -1,12 +1,12 @@
 import { Block } from 'payload/types'
 import link from '../fields/link'
 
-import { padding } from '../fields/padding'
+import { display } from '../fields/display'
 
 export const Hero: Block = {
   slug: 'hero',
   fields: [
-    padding,
+    display,
     {
       name: 'featuredPost',
       label: 'Featured Post',

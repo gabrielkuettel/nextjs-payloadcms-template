@@ -23,7 +23,7 @@ export interface Page {
   title: string
   layout: (
     | {
-        horizontalPadding?: boolean
+        fullWidth?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         featuredPost?: string | Post
@@ -52,7 +52,7 @@ export interface Page {
         blockType: 'hero'
       }
     | {
-        horizontalPadding?: boolean
+        fullWidth?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         title?: string
@@ -62,7 +62,7 @@ export interface Page {
         blockType: 'headerSection'
       }
     | {
-        horizontalPadding?: boolean
+        fullWidth?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         show?: '3' | '6' | '9'

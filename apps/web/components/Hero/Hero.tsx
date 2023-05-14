@@ -135,13 +135,15 @@ export function Hero({
         </div>
       </div>
       {featuredPost && (
-        <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
-            className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-            src={formatMediaURL(featuredPost.imageUrl)}
-            alt=""
-            fill
-          />
+        <div className="mt-24 bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:m-0 lg:w-1/2">
+          <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full lg:w-full">
+            <Image
+              className="object-cover"
+              src={formatMediaURL(featuredPost.imageUrl)}
+              alt=""
+              fill
+            />
+          </div>
         </div>
       )}
     </div>

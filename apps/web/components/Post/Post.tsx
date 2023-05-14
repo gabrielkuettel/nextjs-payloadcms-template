@@ -61,7 +61,7 @@ export function Post({
           </div>
         </Container>
       </div>
-      <Container className="mt-4 sm:mt-8">
+      <Container className="mt-4 sm:mt-8" bottomPadding>
         <RichText content={post.content} className="max-w-2xl" />
         {post.tags?.length && (
           <div className="mt-8 sm:mt-16">

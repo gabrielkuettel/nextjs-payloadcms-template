@@ -25,6 +25,7 @@ export type HeroProps = {
   horizontalPadding?: boolean
   bottomPadding?: boolean
   topPadding?: boolean
+  fullWidth?: boolean
 }
 
 export function Hero({
@@ -35,11 +36,12 @@ export function Hero({
   secondaryAction,
   horizontalPadding,
   bottomPadding,
-  topPadding
+  topPadding,
+  fullWidth
 }: HeroProps) {
   const featured = {
     title: featuredPost?.title || '',
-    url: `/blog/${featuredPost?.slug}` || '',
+    url: `/blog/posts/${featuredPost?.slug}` || '',
     imageUrl: featuredPost?.image.url || ''
   }
 
@@ -70,6 +72,7 @@ export function Hero({
       horizontalPadding={horizontalPadding}
       bottomPadding={bottomPadding}
       topPadding={topPadding}
+      fullWidth={fullWidth}
     >
       <HeroComponent
         title={title}

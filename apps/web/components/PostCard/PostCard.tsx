@@ -35,7 +35,7 @@ export const PostCard: React.FC<PostProps> = ({
   return (
     <article className="flex flex-col items-start">
       <div className="relative aspect-[16/9] w-full bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/posts/${slug}`}>
           <Image
             src={formatMediaURL(imageUrl)}
             alt=""
@@ -68,7 +68,7 @@ export const PostCard: React.FC<PostProps> = ({
         </div>
         <div className="group relative">
           <h3 className="mt-3 line-clamp-1 text-lg font-semibold leading-6 text-neutral-900 group-hover:text-neutral-600">
-            <Link href={`/blog/${slug}`}>
+            <Link href={`/blog/posts/${slug}`}>
               <span className="absolute inset-0 truncate" />
               {title}
             </Link>
