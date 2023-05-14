@@ -7,7 +7,6 @@ export async function getPostsByTag({ slug }: { slug: string }) {
   const collection = 'posts'
   const query = qs.stringify({
     depth: 10,
-    limit: 3,
     where: {
       and: [
         {
