@@ -30,7 +30,7 @@ export function Post({
         />
         <Container className="z-10">
           <div className="absolute bottom-8 z-10 text-white lg:bottom-16">
-            {post.author && (
+            {post.author ? (
               <>
                 <div className="hidden  sm:block">
                   <Author
@@ -54,7 +54,7 @@ export function Post({
                   />
                 </div>
               </>
-            )}
+            ) : null}
             <h1 className="pr-6 text-3xl font-bold lg:pr-12 lg:text-5xl">
               {post.title}
             </h1>
@@ -63,7 +63,7 @@ export function Post({
       </div>
       <Container className="mt-4 sm:mt-8" bottomPadding>
         <RichText content={post.content} className="mt-8 max-w-2xl sm:mt-16" />
-        {post.tags?.length && (
+        {post.tags?.length ? (
           <div className="mt-8 sm:mt-16">
             <Tags
               tags={post.tags.map((tag) => ({
@@ -73,8 +73,8 @@ export function Post({
               className="text-sm no-underline"
             />
           </div>
-        )}
-        {relatedPosts && relatedPosts.length && primaryTag && (
+        ) : null}
+        {relatedPosts && relatedPosts.length && primaryTag ? (
           <div className="mt-16 sm:mt-32">
             <HeaderSection
               title="Keep Reading"
@@ -83,7 +83,7 @@ export function Post({
             />
             <BlogSection posts={mapPosts(relatedPosts)} />
           </div>
-        )}
+        ) : null}
       </Container>
     </article>
   )
