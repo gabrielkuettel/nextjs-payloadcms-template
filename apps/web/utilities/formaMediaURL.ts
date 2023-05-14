@@ -1,4 +1,8 @@
-export function formatMediaURL(path: string) {
+export function formatMediaURL(path: string | undefined | null) {
+  if (!path) {
+    return null
+  }
+
   if (path.startsWith('http')) {
     return path
   } else {

@@ -6,11 +6,17 @@ import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import { formatMediaURL } from '@/utilities/formaMediaURL'
+
 type MenuProps = {
+  companyLogoUrl?: string
   navigation: { name: string; href: string }[]
 }
 
-export const MainMenu: React.FC<MenuProps> = ({ navigation }) => {
+export const MainMenu: React.FC<MenuProps> = ({
+  companyLogoUrl,
+  navigation
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -25,8 +31,11 @@ export const MainMenu: React.FC<MenuProps> = ({ navigation }) => {
             <Image
               width={32}
               height={32}
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=600"
+              className="h-20 w-auto"
+              src={
+                formatMediaURL(companyLogoUrl) ||
+                'https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=600'
+              }
               alt=""
               unoptimized
             />

@@ -15,6 +15,7 @@ export interface Config {
     media: Media
   }
   globals: {
+    company: Company
     'main-menu': MainMenu
   }
 }
@@ -24,6 +25,7 @@ export interface Page {
   layout: (
     | {
         fullWidth?: boolean
+        horizontalPadding?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         featuredPost?: string | Post
@@ -53,6 +55,7 @@ export interface Page {
       }
     | {
         fullWidth?: boolean
+        horizontalPadding?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         title?: string
@@ -63,6 +66,7 @@ export interface Page {
       }
     | {
         fullWidth?: boolean
+        horizontalPadding?: boolean
         topPadding?: boolean
         bottomPadding?: boolean
         show?: '3' | '6' | '9'
@@ -144,6 +148,11 @@ export interface Tag {
   id: string
   slug?: string
   name?: string
+}
+export interface Company {
+  id: string
+  name?: string
+  logo?: string | Media
 }
 export interface MainMenu {
   id: string

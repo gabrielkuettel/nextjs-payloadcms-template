@@ -16,10 +16,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const mainMenu = await getPage()
+  const { menu, companyInfo } = await getPage()
 
   /** @todo map this to mapMainMenu */
-  const navigation = mainMenu.navItems.map((item) => ({
+  const navigation = menu.navItems.map((item) => ({
     name: item.link.label,
     href:
       item.link.type === 'reference'
@@ -32,13 +32,15 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
-        <header>
-          <MainMenu navigation={navigation} />
-        </header>
+        <MainMenu
+          companyLogoUrl={
+            (typeof companyInfo?.logo !== 'string' && companyInfo?.logo?.url) ||
+            undefined
+          }
+          navigation={navigation}
+        />
         {children}
-        <footer>
-          <Footer navigation={navigation} />
-        </footer>
+        <Footer companyName={companyInfo?.name} navigation={navigation} />
       </body>
     </html>
   )

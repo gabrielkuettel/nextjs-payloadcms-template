@@ -63,10 +63,16 @@ const social = [
 ]
 
 type FooterProps = {
+  companyLogoUrl?: string
+  companyName?: string
   navigation: { name: string; href: string }[]
 }
 
-export function Footer({ navigation }: FooterProps) {
+export function Footer({
+  companyName,
+  companyLogoUrl: _,
+  navigation
+}: FooterProps) {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
@@ -98,7 +104,7 @@ export function Footer({ navigation }: FooterProps) {
           ))}
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2020 Your Company, Inc. All rights reserved.
+          &copy; 2020 {companyName || 'Your Company'}. All rights reserved.
         </p>
       </div>
     </footer>
