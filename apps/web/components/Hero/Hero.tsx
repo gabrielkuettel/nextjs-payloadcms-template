@@ -139,7 +139,7 @@ export function Hero({
           <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full lg:w-full">
             <Image
               className="object-cover"
-              src={formatMediaURL(featuredPost.imageUrl)}
+              src={formatMediaURL(featuredPost.imageUrl) || ''}
               alt=""
               fill
             />

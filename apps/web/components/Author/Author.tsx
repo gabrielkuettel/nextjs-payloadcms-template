@@ -41,7 +41,7 @@ export function Author({
             )}
             width={64}
             height={64}
-            src={formatMediaURL(avatarSrc)}
+            src={formatMediaURL(avatarSrc) || ''}
             alt={avatarAlt}
           />
         </div>
