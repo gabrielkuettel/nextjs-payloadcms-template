@@ -46,10 +46,10 @@ export async function getRelatedPosts({
     }
   })
 
-  const postData = await rest<PaginatedDocs<Post[]>>(collection + '?' + query)
-  const post = postData?.docs[0]
+  const postsData = await rest<PaginatedDocs<Post>>(collection + '?' + query)
+  const posts = postsData?.docs
 
-  return post
+  return posts
 }
 
 export async function getPage({ slug }: { slug: string }) {

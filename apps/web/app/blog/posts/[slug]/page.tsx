@@ -11,20 +11,18 @@ type PageProps = {
 
 export default async function Page(props: PageProps) {
   const slug = getPageSlug(props.params.slug)
-  const [postPage] = await Promise.all([getPage({ slug })])
+  const [postData] = await Promise.all([getPage({ slug })])
 
-  console.log(postPage)
-
-  if (!postPage) {
+  if (!postData) {
     notFound()
   }
 
   return (
     <article>
       <Post
-        post={postPage.post}
-        primaryTag={postPage.primaryTag}
-        relatedPosts={postPage.relatedPosts}
+        post={postData.post}
+        primaryTag={postData.primaryTag}
+        relatedPosts={postData.relatedPosts}
       />
     </article>
   )
