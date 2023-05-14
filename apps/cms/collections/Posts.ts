@@ -35,7 +35,8 @@ const Posts: CollectionConfig = {
     {
       name: 'category',
       type: 'relationship',
-      relationTo: 'categories'
+      relationTo: 'categories',
+      hidden: true
     },
     {
       name: 'tags',

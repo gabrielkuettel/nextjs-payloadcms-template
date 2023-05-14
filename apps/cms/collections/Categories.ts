@@ -2,8 +2,10 @@ import { CollectionConfig } from 'payload/types'
 
 const Categories: CollectionConfig = {
   slug: 'categories',
+
   admin: {
-    useAsTitle: 'name'
+    useAsTitle: 'name',
+    hidden: true
   },
   access: {
     read: () => true
