@@ -12,24 +12,7 @@ export const Media: CollectionConfig = {
   access: {
     read: (): boolean => true // Everyone can read Media
   },
-  upload: {
-    staticURL: '/media',
-    staticDir: 'media',
-    mimeTypes: ['image/*', 'video/*'],
-    adminThumbnail: 'card',
-    imageSizes: [
-      {
-        name: 'card',
-        width: 640,
-        height: 480
-      },
-      {
-        name: 'feature',
-        width: 1024,
-        height: 576
-      }
-    ]
-  },
+  upload: true,
   fields: [alt]
 }
 
