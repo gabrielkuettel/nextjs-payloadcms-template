@@ -23,7 +23,7 @@ export function Post({
       <div className="relative h-96 shadow-xl md:h-[400px] lg:h-[500px]">
         <div className="from-primary-950 absolute h-full w-full bg-gradient-to-t to-transparent"></div>
         <div
-          className="h-full w-full bg-cover bg-fixed bg-center bg-no-repeat"
+          className="h-full w-full bg-fixed bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${formatMediaURL(post.image.url || '')})`
           }}
@@ -32,7 +32,7 @@ export function Post({
           <div className="absolute bottom-8 z-10 text-white lg:bottom-16">
             {post.author ? (
               <>
-                <div className="hidden  sm:block">
+                <div className="hidden sm:block">
                   <Author
                     avatarSrc={post.author?.avatar.url || ''}
                     avatarAlt={post.author?.name || ''}
