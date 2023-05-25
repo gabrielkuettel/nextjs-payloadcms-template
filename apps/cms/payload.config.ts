@@ -8,6 +8,7 @@ import Posts from './collections/Posts'
 import Tags from './collections/Tags'
 import Users from './collections/Users'
 import Media from './collections/Media'
+import SDGs from './collections/SDGs'
 import { Company } from './globals/Company'
 import { MainMenu } from './globals/MainMenu'
 
@@ -22,7 +23,7 @@ export default buildConfig({
   admin: {
     user: Users.slug
   },
-  collections: [Pages, Categories, Posts, Tags, Users, Media],
+  collections: [Pages, Categories, Posts, Tags, Users, Media, SDGs],
   globals: [Company, MainMenu],
   typescript: {
     outputFile: path.resolve(__dirname, '../../packages/types/payload-types.ts')

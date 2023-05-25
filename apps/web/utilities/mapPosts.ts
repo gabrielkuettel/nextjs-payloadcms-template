@@ -25,6 +25,14 @@ export const mapPosts = (posts: Post[]) => {
         typeof post.author !== 'string' ? post.author?.avatar?.url || '' : ''
     }
 
+    const SDGs = post.SDGs?.map((SDG) => {
+      return {
+        name: SDG.name || '',
+        slug: SDG.slug || '',
+        imageUrl: typeof SDG.image !== 'string' ? SDG.image?.url || '' : ''
+      }
+    })
+
     return {
       ...post,
       imageUrl,
@@ -33,7 +41,8 @@ export const mapPosts = (posts: Post[]) => {
       slug,
       title,
       publishedDate,
-      excerpt
+      excerpt,
+      SDGs
     }
   })
 }

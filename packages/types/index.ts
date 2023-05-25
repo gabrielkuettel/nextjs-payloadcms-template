@@ -4,7 +4,8 @@ import type {
   User as PayloadUser,
   Category,
   Tag,
-  Media
+  Media,
+  Sdg
 } from './payload-types'
 
 export * from './payload-types'
@@ -32,6 +33,7 @@ export interface Post extends PayloadPost {
   category?: Category
   author?: User
   tags?: Tag[]
+  SDGs?: Sdg[]
   image: Media
 }
 

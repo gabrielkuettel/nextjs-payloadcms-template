@@ -21,6 +21,7 @@ type PostProps = {
   }
   publishedDate: string
   excerpt?: string
+  SDGs?: { name: string; slug: string; imageUrl: string }[]
 }
 
 export const PostCard: React.FC<PostProps> = ({
@@ -30,8 +31,31 @@ export const PostCard: React.FC<PostProps> = ({
   primaryTag,
   author,
   publishedDate,
-  excerpt
+  excerpt,
+  SDGs
 }) => {
+  function renderSDGs() {
+    return SDGs?.map((SDG) => {
+      if (typeof SDG === 'string') {
+        return null
+      }
+
+      return (
+        <Link
+          href={`/blog/sdg/${SDG.slug}`}
+          key={SDG.slug}
+          className="relative mb-2 mr-1 h-12 w-12 shadow-lg"
+        >
+          <Image
+            src={formatMediaURL(SDG.imageUrl) || ''}
+            alt={SDG.name}
+            fill
+            sizes="(max-width: 1024px) 48px, 80px"
+          />
+        </Link>
+      )
+    })
+  }
   return (
     <article className="flex flex-col items-start">
       <div className="relative aspect-[16/9] w-full bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
@@ -45,6 +69,11 @@ export const PostCard: React.FC<PostProps> = ({
           />
           <div className="absolute inset-0" />
         </Link>
+        {SDGs && (
+          <div className="absolute bottom-0 flex w-full flex-wrap gap-x-2 bg-gradient-to-t from-white to-transparent px-2">
+            {renderSDGs()}
+          </div>
+        )}
       </div>
       <div className="max-w-xl">
         <div className="mt-6 flex min-h-[28px] items-center gap-x-4 text-xs">

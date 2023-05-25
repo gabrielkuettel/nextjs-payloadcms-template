@@ -32,16 +32,23 @@ const Posts: CollectionConfig = {
       type: 'date'
     },
     image,
-    {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories',
-      hidden: true
-    },
+    // {
+    //   name: 'category',
+    //   type: 'relationship',
+    //   relationTo: 'categories',
+    //   hidden: true
+    // },
     {
       name: 'tags',
       type: 'relationship',
       relationTo: 'tags',
+      hasMany: true
+    },
+    {
+      name: 'SDGs',
+      label: 'Sustainable Development Goals',
+      type: 'relationship',
+      relationTo: 'sdg',
       hasMany: true
     },
     {

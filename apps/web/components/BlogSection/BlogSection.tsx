@@ -16,6 +16,7 @@ type Post = {
     name: string
     slug: string
   }
+  SDGs?: { name: string; slug: string; imageUrl: string }[]
 }
 
 export type BlogSectionProps = {
@@ -35,6 +36,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ posts }) => {
           author={post.author}
           publishedDate={post.publishedDate}
           excerpt={post.excerpt}
+          SDGs={post.SDGs}
         />
       ))}
     </div>
