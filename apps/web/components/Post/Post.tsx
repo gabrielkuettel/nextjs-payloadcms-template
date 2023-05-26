@@ -47,6 +47,36 @@ export function Post({
     })
   }
 
+  function renderVideo() {
+    if (!post.video) {
+      return null
+    }
+
+    return (
+      <div>
+        {post.video.upload && typeof post.video.upload !== 'string' ? (
+          <div className="mt-12">
+            <video width="560" height="315" controls>
+              <source
+                src={formatMediaURL(post.video.upload.url) || ''}
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        ) : null}
+        {post.video.embed ? (
+          <div className="mt-12">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${post.video.embed}?controls=0`}
+            ></iframe>
+          </div>
+        ) : null}
+      </div>
+    )
+  }
+
   return (
     <article>
       <div className="relative h-96 shadow-xl md:h-[400px] lg:h-[500px]">
@@ -97,6 +127,7 @@ export function Post({
             <div className="flex flex-row flex-wrap">{renderSDGs()}</div>
           </div>
         ) : null}
+        {renderVideo()}
         <RichText content={post.content} className="mt-8 max-w-2xl sm:mt-16" />
         {post.tags?.length ? (
           <div className="mt-8 sm:mt-16">

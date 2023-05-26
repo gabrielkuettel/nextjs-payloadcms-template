@@ -32,6 +32,52 @@ const Posts: CollectionConfig = {
       type: 'date'
     },
     image,
+    {
+      name: 'video',
+      type: 'group',
+      fields: [
+        {
+          name: 'type',
+          label: 'Video Type',
+          type: 'radio',
+          options: [
+            {
+              label: 'YouTube Video',
+              value: 'embed'
+            },
+            {
+              label: 'Upload Video',
+              value: 'upload'
+            }
+          ],
+          defaultValue: 'youtube',
+          admin: {
+            layout: 'horizontal',
+            width: '50%'
+          }
+        },
+        {
+          name: 'embed',
+          label: 'YouTube Video ID',
+          type: 'text',
+          admin: {
+            condition: (_, siblingData) => siblingData?.type === 'embed'
+          }
+        },
+        {
+          name: 'upload',
+          label: 'Upload Video',
+          type: 'upload',
+          relationTo: 'media',
+          filterOptions: {
+            mimeType: { contains: 'video' }
+          },
+          admin: {
+            condition: (_, siblingData) => siblingData?.type === 'upload'
+          }
+        }
+      ]
+    },
     // {
     //   name: 'category',
     //   type: 'relationship',

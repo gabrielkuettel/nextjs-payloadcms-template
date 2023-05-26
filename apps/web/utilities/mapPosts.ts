@@ -33,6 +33,13 @@ export const mapPosts = (posts: Post[]) => {
       }
     })
 
+    const video =
+      post.video?.type === 'embed'
+        ? post.video?.embed
+        : typeof post.video?.upload !== 'string'
+        ? post.video?.upload?.url
+        : ''
+
     return {
       ...post,
       imageUrl,
@@ -42,7 +49,8 @@ export const mapPosts = (posts: Post[]) => {
       title,
       publishedDate,
       excerpt,
-      SDGs
+      SDGs,
+      video
     }
   })
 }
