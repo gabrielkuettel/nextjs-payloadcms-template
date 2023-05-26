@@ -88,6 +88,11 @@ export interface Post {
   author?: string | User
   publishedDate?: string
   image?: string | Media
+  video?: {
+    type?: 'embed' | 'upload'
+    embed?: string
+    upload?: string | Media
+  }
   tags?: string[] | Tag[]
   SDGs?: string[] | Sdg[]
   content?: {
