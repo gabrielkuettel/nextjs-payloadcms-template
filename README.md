@@ -1,19 +1,3 @@
-# Turborepo starter
-
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
 ### Apps and Packages
 
 - `web`: another [Next.js](https://nextjs.org/) app
@@ -33,13 +17,20 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+### Install
+
+To install all apps and packages, run the following command:
+
+```
+npm run install
+```
+
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm build
+npm run build
 ```
 
 ### Develop
@@ -47,8 +38,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
-pnpm dev
+npm run dev
 ```
 
 ### Remote Caching
