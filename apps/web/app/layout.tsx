@@ -2,9 +2,14 @@ import '../styles/global.css'
 import 'ui/styles.css'
 import { Inter } from 'next/font/google'
 
-import { getPage } from './queries'
 import { MainMenu } from '@/components/MainMenu'
 import { Footer } from '@/components/Footer'
+
+const NAVIGATION = [
+  { name: 'Services', href: '/services' },
+  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'About Us', href: '/about' }
+]
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,31 +21,15 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { menu, companyInfo } = await getPage()
-
-  /** @todo map this to mapMainMenu */
-  const navigation = menu.navItems.map((item) => ({
-    name: item.link.label,
-    href:
-      item.link.type === 'reference'
-        ? typeof item.link.reference.value !== 'string'
-          ? item.link.reference.value.slug || ''
-          : ''
-        : item.link.url || ''
-  }))
-
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
         <MainMenu
-          companyLogoUrl={
-            (typeof companyInfo?.logo !== 'string' && companyInfo?.logo?.url) ||
-            undefined
-          }
-          navigation={navigation}
+          companyLogoUrl={'/images/bare-boulder-logo.webp'}
+          navigation={NAVIGATION}
         />
         {children}
-        <Footer companyName={companyInfo?.name} navigation={navigation} />
+        <Footer companyName={'Bare Boulder'} navigation={NAVIGATION} />
       </body>
     </html>
   )

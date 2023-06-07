@@ -6,8 +6,6 @@ import Image from 'next/image'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-import { formatMediaURL } from '@/utilities/formaMediaURL'
-
 type MenuProps = {
   companyLogoUrl?: string
   navigation: { name: string; href: string }[]
@@ -26,17 +24,13 @@ export const MainMenu: React.FC<MenuProps> = ({
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          {/* @todo fix '/' redirecting to 404 */}
-          <Link href="/home" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
               width={32}
               height={32}
               className="h-20 w-auto"
-              src={
-                formatMediaURL(companyLogoUrl) ||
-                'https://tailwindui.com/img/logos/mark.svg?color=cyan&shade=600'
-              }
+              src={companyLogoUrl || ''}
               alt=""
               unoptimized
             />
