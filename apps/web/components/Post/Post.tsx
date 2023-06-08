@@ -33,7 +33,7 @@ export function Post({
               <>
                 <div className="hidden sm:block">
                   <Author
-                    avatarSrc={post.author?.avatar.url || ''}
+                    avatarSrc={post.author?.avatar?.url || ''}
                     avatarAlt={post.author?.name || ''}
                     name={post.author?.name || ''}
                     href={`/blog/authors/${post.author?.slug}`}
@@ -43,7 +43,7 @@ export function Post({
                 </div>
                 <div className="sm:hidden">
                   <Author
-                    avatarSrc={post.author?.avatar.url || ''}
+                    avatarSrc={post.author?.avatar?.url || ''}
                     avatarAlt={post.author?.name || ''}
                     name={post.author?.name || ''}
                     href={`/blog/authors/${post.author?.slug}`}
