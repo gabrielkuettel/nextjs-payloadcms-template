@@ -12,18 +12,18 @@ const Users: CollectionConfig = {
   },
   fields: [
     // Email added by default
-    slugField('name'),
     {
       name: 'name',
       type: 'text'
+      required: true
+    },
+    slugField('name'),
+    {
+      name: 'avatar',
+      label: 'Avatar',
+      type: 'upload',
+      relationTo: 'media'
     }
-    // {
-    //   name: 'avatar',
-    //   label: 'Avatar',
-    //   type: 'upload',
-    //   relationTo: 'media',
-    //   required: true
-    // }
   ]
 }
 
