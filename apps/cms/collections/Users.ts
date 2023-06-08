@@ -14,7 +14,7 @@ const Users: CollectionConfig = {
     // Email added by default
     {
       name: 'name',
-      type: 'text'
+      type: 'text',
       required: true
     },
     slugField('name'),
