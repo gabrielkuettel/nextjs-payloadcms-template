@@ -33,9 +33,7 @@ export function Post({
         >
           <Image
             src={
-              formatMediaURL(
-                typeof SDG.image !== 'string' ? SDG.image?.url : ''
-              ) || ''
+              (typeof SDG.image !== 'string' ? SDG.image?.url || '' : '') || ''
             }
             alt={SDG.name}
             fill
@@ -56,10 +54,7 @@ export function Post({
         {post.video.upload && typeof post.video.upload !== 'string' ? (
           <div className="mt-12">
             <video width="560" height="315" controls>
-              <source
-                src={formatMediaURL(post.video.upload.url) || ''}
-                type="video/mp4"
-              />
+              <source src={post.video.upload.url || ''} type="video/mp4" />
             </video>
           </div>
         ) : null}

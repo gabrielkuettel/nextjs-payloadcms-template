@@ -46,7 +46,7 @@ export const PostCard: React.FC<PostProps> = ({
           className="relative mb-2 mr-1 h-12 w-12 shadow-lg"
         >
           <Image
-            src={formatMediaURL(SDG.imageUrl) || ''}
+            src={SDG.imageUrl || ''}
             alt={SDG.name}
             fill
             sizes="(max-width: 1024px) 48px, 80px"
