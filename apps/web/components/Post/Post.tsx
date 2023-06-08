@@ -1,7 +1,6 @@
 import { Post } from 'types'
 
 import { mapPosts } from '@/utilities/mapPosts'
-import { formatMediaURL } from '@/utilities/formaMediaURL'
 import { Container } from '@/components/Container'
 import { Author } from '@/components/Author'
 import { RichText } from '@/components/RichText'
@@ -25,7 +24,7 @@ export function Post({
         <div
           className="h-full w-full bg-fixed bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${formatMediaURL(post.image.url || '')})`
+            backgroundImage: `url(${post.image.url || ''})`
           }}
         />
         <Container className="z-10">

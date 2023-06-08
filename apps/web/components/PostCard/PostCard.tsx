@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { formatMediaURL } from '@/utilities/formaMediaURL'
 import { Tags } from '../../components/Tags'
 import { Author } from '../../components/Author'
 
@@ -37,7 +36,7 @@ export const PostCard: React.FC<PostProps> = ({
       <div className="relative aspect-[16/9] w-full bg-neutral-100 shadow-lg sm:aspect-[2/1] lg:aspect-[3/2]">
         <Link href={`/blog/posts/${slug}`}>
           <Image
-            src={formatMediaURL(imageUrl) || ''}
+            src={imageUrl || ''}
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 33vw"
