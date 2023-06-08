@@ -104,9 +104,9 @@ export interface Post {
 }
 export interface User {
   id: string
+  name: string
   slug?: string
-  name?: string
-  avatar: string | Media
+  avatar?: string | Media
   updatedAt: string
   createdAt: string
   email?: string

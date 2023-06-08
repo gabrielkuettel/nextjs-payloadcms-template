@@ -22,7 +22,7 @@ This Turborepo has some additional tools already setup for you:
 To install all apps and packages, run the following command:
 
 ```
-npm run install
+npm install
 ```
 
 ### Build
