@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Post } from 'types'
 
 import { mapPosts } from '@/utilities/mapPosts'
-import { formatMediaURL } from '@/utilities/formaMediaURL'
 import { Container } from '@/components/Container'
 import { Author } from '@/components/Author'
 import { RichText } from '@/components/RichText'
@@ -84,7 +83,7 @@ export function Post({
         <div
           className="h-full w-full bg-fixed bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${formatMediaURL(post.image.url || '')})`
+            backgroundImage: `url(${post.image.url || ''})`
           }}
         />
         <Container className="z-10">
@@ -93,7 +92,7 @@ export function Post({
               <>
                 <div className="hidden sm:block">
                   <Author
-                    avatarSrc={post.author?.avatar.url || ''}
+                    avatarSrc={post.author?.avatar?.url || ''}
                     avatarAlt={post.author?.name || ''}
                     name={post.author?.name || ''}
                     href={`/blog/authors/${post.author?.slug}`}
@@ -103,7 +102,7 @@ export function Post({
                 </div>
                 <div className="sm:hidden">
                   <Author
-                    avatarSrc={post.author?.avatar.url || ''}
+                    avatarSrc={post.author?.avatar?.url || ''}
                     avatarAlt={post.author?.name || ''}
                     name={post.author?.name || ''}
                     href={`/blog/authors/${post.author?.slug}`}

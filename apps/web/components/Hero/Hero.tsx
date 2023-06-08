@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { formatMediaURL } from '@/utilities/formaMediaURL'
-
 type HeroProps = {
   featuredPost?: {
     title: string
@@ -139,7 +137,7 @@ export function Hero({
           <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full lg:w-full">
             <Image
               className="object-cover"
-              src={formatMediaURL(featuredPost.imageUrl) || ''}
+              src={featuredPost.imageUrl}
               alt=""
               fill
             />
