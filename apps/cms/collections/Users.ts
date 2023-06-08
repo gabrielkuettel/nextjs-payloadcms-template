@@ -16,14 +16,14 @@ const Users: CollectionConfig = {
     {
       name: 'name',
       type: 'text'
-    },
-    {
-      name: 'avatar',
-      label: 'Avatar',
-      type: 'upload',
-      relationTo: 'media',
-      required: true
     }
+    // {
+    //   name: 'avatar',
+    //   label: 'Avatar',
+    //   type: 'upload',
+    //   relationTo: 'media',
+    //   required: true
+    // }
   ]
 }
 
