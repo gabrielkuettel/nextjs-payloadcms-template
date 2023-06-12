@@ -29,7 +29,10 @@ export default async function RootLayout({
           navigation={NAVIGATION}
         />
         {children}
-        <Footer companyName={'Bare Boulder'} navigation={NAVIGATION} />
+        <Footer
+          companyLogoUrl={'/images/bare-boulder-logo.webp'}
+          companyName={'Bare Boulder Design & Repair Company'}
+        />
       </body>
     </html>
   )
