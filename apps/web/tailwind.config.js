@@ -3,5 +3,12 @@
 const sharedConfig = require('tailwind-config/tailwind.config.js')
 
 module.exports = {
-  presets: [sharedConfig]
+  presets: [sharedConfig],
+  theme: {
+    extend: {
+      spacing: {
+        '784': '49rem',
+      }
+    }
+  }
 }
