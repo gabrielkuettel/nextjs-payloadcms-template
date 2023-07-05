@@ -17,6 +17,10 @@ export default async function RootLayout({
 }) {
   const { menu, companyInfo } = await getPage()
 
+  if (!menu || !menu.navItems) {
+    throw new Error('No menu found')
+  }
+
   /** @todo map this to mapMainMenu */
   const navigation = menu.navItems.map((item) => ({
     name: item.link.label,
