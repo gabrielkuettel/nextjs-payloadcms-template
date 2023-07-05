@@ -1,5 +1,4 @@
 import '../styles/global.css'
-import 'ui/styles.css'
 import { Inter } from 'next/font/google'
 
 import { getPage } from './queries'
