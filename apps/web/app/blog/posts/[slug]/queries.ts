@@ -1,5 +1,6 @@
 import qs from 'qs'
-import { Post, PaginatedDocs } from 'types'
+import { Post, PaginatedDocs, Tag } from 'types'
+import { checkRelation } from '@/utilities/checkRelation'
 
 import { rest } from '@/api/rest'
 
@@ -58,7 +59,7 @@ export async function getPage({ slug }: { slug: string }) {
     throw new Error('Post not found')
   }
 
-  const primaryTag = post?.tags?.[0]?.slug || ''
+  const primaryTag = checkRelation<Tag>(post?.tags?.[0])?.slug || ''
   const relatedPosts = await getRelatedPosts({ slug, tag: primaryTag })
 
   return {

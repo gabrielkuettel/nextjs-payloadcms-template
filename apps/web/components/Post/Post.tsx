@@ -1,6 +1,7 @@
-import { Post } from 'types'
+import { Post, User, Media, Tag } from 'types'
 
 import { mapPosts } from '@/utilities/mapPosts'
+import { checkRelation } from '@/utilities/checkRelation'
 import { Container } from '@/components/Container'
 import { Author } from '@/components/Author'
 import { RichText } from '@/components/RichText'
@@ -24,7 +25,9 @@ export function Post({
         <div
           className="h-full w-full bg-fixed bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${post.image.url || ''})`
+            backgroundImage: `url(${
+              checkRelation<Media>(post.image)?.url || ''
+            })`
           }}
         />
         <Container className="z-10">
@@ -33,20 +36,32 @@ export function Post({
               <>
                 <div className="hidden sm:block">
                   <Author
-                    avatarSrc={post.author?.avatar?.url || ''}
-                    avatarAlt={post.author?.name || ''}
-                    name={post.author?.name || ''}
-                    href={`/blog/authors/${post.author?.slug}`}
+                    avatarSrc={
+                      checkRelation<Media>(
+                        checkRelation<User>(post.author)?.avatar
+                      )?.url || ''
+                    }
+                    avatarAlt={checkRelation<User>(post.author)?.name || ''}
+                    name={checkRelation<User>(post.author)?.name || ''}
+                    href={`/blog/authors/${
+                      checkRelation<User>(post.author)?.slug
+                    }`}
                     darkMode={true}
                     className="mb-4 sm:my-8"
                   />
                 </div>
                 <div className="sm:hidden">
                   <Author
-                    avatarSrc={post.author?.avatar?.url || ''}
-                    avatarAlt={post.author?.name || ''}
-                    name={post.author?.name || ''}
-                    href={`/blog/authors/${post.author?.slug}`}
+                    avatarSrc={
+                      checkRelation<Media>(
+                        checkRelation<User>(post.author)?.avatar
+                      )?.url || ''
+                    }
+                    avatarAlt={checkRelation<User>(post.author)?.name || ''}
+                    name={checkRelation<User>(post.author)?.name || ''}
+                    href={`/blog/authors/${
+                      checkRelation<User>(post.author)?.slug
+                    }`}
                     size="sm"
                     darkMode={true}
                     className="mb-4 sm:mt-8 sm:hidden"
@@ -66,8 +81,8 @@ export function Post({
           <div className="mt-8 sm:mt-16">
             <Tags
               tags={post.tags.map((tag) => ({
-                name: tag.name || '',
-                slug: tag.slug || ''
+                name: checkRelation<Tag>(tag)?.name || '',
+                slug: checkRelation<Tag>(tag)?.slug || ''
               }))}
               className="text-sm no-underline"
             />

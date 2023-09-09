@@ -1,4 +1,5 @@
-import { Post } from 'types'
+import { Post, User, Media, Tag } from 'types'
+import { checkRelation } from './checkRelation'
 
 export const mapPosts = (posts: Post[]) => {
   return posts?.map((post) => {
@@ -11,18 +12,19 @@ export const mapPosts = (posts: Post[]) => {
         .map((child) => child.text)
         .join(' ') || ''
 
-    const imageUrl = post.image?.url || ''
+    const imageUrl = checkRelation<Media>(post.image)?.url || ''
 
     const primaryTag = {
-      name: (post.tags && post.tags[0]?.name) || '',
-      slug: (post.tags && post.tags[0]?.slug) || ''
+      name: checkRelation<Tag>(post.tags?.[0])?.name || '',
+      slug: checkRelation<Tag>(post.tags?.[0])?.slug || ''
     }
 
     const author = {
-      name: typeof post.author !== 'string' ? post.author?.name || '' : '',
-      slug: typeof post.author !== 'string' ? post.author?.slug || '' : '',
+      name: checkRelation<User>(post.author)?.name || '',
+      slug: checkRelation<User>(post.author)?.slug || '',
       imageUrl:
-        typeof post.author !== 'string' ? post.author?.avatar?.url || '' : ''
+        checkRelation<Media>(checkRelation<User>(post.author)?.avatar)?.url ||
+        ''
     }
 
     return {

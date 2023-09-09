@@ -1,4 +1,5 @@
-import { Post, Page } from 'types'
+import { Post, Page, Media } from 'types'
+import { checkRelation } from '@/utilities/checkRelation'
 import { Container } from '@/components/Container'
 import { Hero as HeroComponent } from '@/components/Hero'
 
@@ -42,7 +43,7 @@ export function Hero({
   const featured = {
     title: featuredPost?.title || '',
     url: `/blog/posts/${featuredPost?.slug}` || '',
-    imageUrl: featuredPost?.image.url || ''
+    imageUrl: checkRelation<Media>(featuredPost?.image)?.url || ''
   }
 
   const primary = {
