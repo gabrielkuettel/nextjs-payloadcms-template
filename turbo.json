@@ -19,7 +19,8 @@
         "PAYLOAD_LOCAL_PORT",
         "PAYLOAD_SECRET",
         "PAYLOAD_PUBLIC_SITE_URL",
-        "PAYLOAD_PUBLIC_SERVER_URL"
+        "PAYLOAD_PUBLIC_SERVER_URL",
+        "NEXT_PUBLIC_CMS_URL"
       ],
       "outputs": ["dist/**", "build/**"]
     },
@@ -30,6 +31,15 @@
     },
     "dev": {
       "dependsOn": ["cms#generate:types", "lint", "format"],
+      "env": [
+        "MONGODB_URI",
+        "PORT",
+        "PAYLOAD_LOCAL_PORT",
+        "PAYLOAD_SECRET",
+        "PAYLOAD_PUBLIC_SITE_URL",
+        "PAYLOAD_PUBLIC_SERVER_URL",
+        "NEXT_PUBLIC_CMS_URL"
+      ],
       "cache": false,
       "persistent": true
     },
