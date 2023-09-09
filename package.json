@@ -19,7 +19,7 @@
     "eslint-config-custom": "*",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "turbo": "^1.9.3"
+    "turbo": "^1.10.13"
   },
   "name": "nextjs-payload-template",
   "packageManager": "npm@8.19.2",
