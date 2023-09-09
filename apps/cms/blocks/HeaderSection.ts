@@ -4,6 +4,7 @@ import { display } from '../fields/display'
 
 export const HeaderSection: Block = {
   slug: 'headerSection',
+  interfaceName: 'HeaderSectionBlock',
   fields: [
     display,
     {

@@ -1,15 +1,20 @@
 import React, { Fragment } from 'react'
-import { Page } from 'types'
+import { Page, HeaderSectionBlock, HeroBlock, BlogSectionBlock } from 'types'
 
 import { toKebabCase } from '@/utilities/toKebabCase'
 import { Hero } from '@/blocks/Hero'
 import { HeaderSection } from '@/blocks/HeaderSection'
 import { BlogSection } from '@/blocks/BlogSection'
 
+type BlockTypes =
+  | HeaderSectionBlock['blockType']
+  | HeroBlock['blockType']
+  | BlogSectionBlock['blockType']
+
 type BlockComponents = {
-  [key in Page['layout'][0]['blockType']]: (
+  [key in BlockTypes]: (
     ...args: any
-  ) => React.JSX.Element | Promise<React.JSX.Element | null> | null
+  ) => React.ReactNode | Promise<React.ReactNode>
 }
 
 const blockComponents: BlockComponents = {

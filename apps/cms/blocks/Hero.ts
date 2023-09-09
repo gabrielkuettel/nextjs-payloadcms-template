@@ -5,6 +5,7 @@ import { display } from '../fields/display'
 
 export const Hero: Block = {
   slug: 'hero',
+  interfaceName: 'HeroBlock',
   fields: [
     display,
     {

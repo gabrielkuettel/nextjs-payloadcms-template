@@ -23,63 +23,41 @@ export interface Config {
 export interface Page {
   id: string
   title: string
-  layout: (
-    | {
-        fullWidth?: boolean
-        horizontalPadding?: boolean
-        topPadding?: boolean
-        bottomPadding?: boolean
-        featuredPost?: string | Post
-        title?: string
-        description?: string
-        primaryAction: {
-          type?: 'reference' | 'custom'
-          reference: {
-            value: string | Page
-            relationTo: 'pages'
-          }
-          url: string
-          label: string
-        }
-        secondaryAction: {
-          type?: 'reference' | 'custom'
-          reference: {
-            value: string | Page
-            relationTo: 'pages'
-          }
-          url: string
-          label: string
-        }
-        id?: string
-        blockName?: string
-        blockType: 'hero'
-      }
-    | {
-        fullWidth?: boolean
-        horizontalPadding?: boolean
-        topPadding?: boolean
-        bottomPadding?: boolean
-        title?: string
-        description?: string
-        id?: string
-        blockName?: string
-        blockType: 'headerSection'
-      }
-    | {
-        fullWidth?: boolean
-        horizontalPadding?: boolean
-        topPadding?: boolean
-        bottomPadding?: boolean
-        show?: '3' | '6' | '9'
-        id?: string
-        blockName?: string
-        blockType: 'blogSection'
-      }
-  )[]
+  layout: (HeroBlock | HeaderSectionBlock | BlogSectionBlock)[]
   slug?: string
   updatedAt: string
   createdAt: string
   _status?: 'draft' | 'published'
+}
+export interface HeroBlock {
+  fullWidth?: boolean
+  horizontalPadding?: boolean
+  topPadding?: boolean
+  bottomPadding?: boolean
+  featuredPost?: string | Post
+  title?: string
+  description?: string
+  primaryAction: {
+    type?: 'reference' | 'custom'
+    reference: {
+      value: string | Page
+      relationTo: 'pages'
+    }
+    url: string
+    label: string
+  }
+  secondaryAction: {
+    type?: 'reference' | 'custom'
+    reference: {
+      value: string | Page
+      relationTo: 'pages'
+    }
+    url: string
+    label: string
+  }
+  id?: string
+  blockName?: string
+  blockType: 'hero'
 }
 export interface Post {
   id: string
@@ -151,6 +129,27 @@ export interface Tag {
   id: string
   slug?: string
   name?: string
+}
+export interface HeaderSectionBlock {
+  fullWidth?: boolean
+  horizontalPadding?: boolean
+  topPadding?: boolean
+  bottomPadding?: boolean
+  title?: string
+  description?: string
+  id?: string
+  blockName?: string
+  blockType: 'headerSection'
+}
+export interface BlogSectionBlock {
+  fullWidth?: boolean
+  horizontalPadding?: boolean
+  topPadding?: boolean
+  bottomPadding?: boolean
+  show?: '3' | '6' | '9'
+  id?: string
+  blockName?: string
+  blockType: 'blogSection'
 }
 export interface Company {
   id: string

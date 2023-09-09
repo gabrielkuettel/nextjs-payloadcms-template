@@ -1,17 +1,10 @@
+import { BlogSectionBlock } from 'types'
 import { getPosts } from './BlogSection.queries'
 import { mapPosts } from '@/utilities/mapPosts'
 import { BlogSection as BlogSectionComponent } from '@/components/BlogSection'
 import { Container } from '@/components/Container'
 
-export type BlogSectionProps = {
-  blockName?: string
-  blockType?: 'formBlock'
-  show?: '3' | '6' | '9' | undefined
-  horizontalPadding?: boolean
-  bottomPadding?: boolean
-  topPadding?: boolean
-  fullWidth?: boolean
-}
+export type BlogSectionProps = BlogSectionBlock
 
 export async function BlogSection({
   show = '3',
