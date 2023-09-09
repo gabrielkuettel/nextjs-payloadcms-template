@@ -50,9 +50,7 @@ export function Hero({
     label: primaryAction?.label || '',
     url:
       primaryAction?.type === 'reference'
-        ? typeof primaryAction.reference.value !== 'string'
-          ? primaryAction.reference.value.slug || ''
-          : ''
+        ? checkRelation<Page>(primaryAction.reference.value)?.slug || ''
         : primaryAction?.url || '',
     external: primaryAction?.type === 'custom'
   }
@@ -61,9 +59,7 @@ export function Hero({
     label: secondaryAction?.label || '',
     url:
       secondaryAction?.type === 'reference'
-        ? typeof secondaryAction.reference.value !== 'string'
-          ? secondaryAction.reference.value.slug || ''
-          : ''
+        ? checkRelation<Page>(secondaryAction.reference.value)?.slug || ''
         : secondaryAction?.url || '',
     external: secondaryAction?.type === 'custom'
   }

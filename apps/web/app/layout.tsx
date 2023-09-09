@@ -1,6 +1,8 @@
 import '../styles/global.css'
 import { Inter } from 'next/font/google'
+import { Media, Page } from 'types'
 
+import { checkRelation } from '@/utilities/checkRelation'
 import { getPage } from './queries'
 import { MainMenu } from '@/components/MainMenu'
 import { Footer } from '@/components/Footer'
@@ -26,9 +28,7 @@ export default async function RootLayout({
     name: item.link.label,
     href:
       item.link.type === 'reference'
-        ? typeof item.link.reference.value !== 'string'
-          ? item.link.reference.value.slug || ''
-          : ''
+        ? checkRelation<Page>(item.link.reference.value)?.slug || ''
         : item.link.url || ''
   }))
 
@@ -37,8 +37,7 @@ export default async function RootLayout({
       <body className={`${inter.variable} font-sans`}>
         <MainMenu
           companyLogoUrl={
-            (typeof companyInfo?.logo !== 'string' && companyInfo?.logo?.url) ||
-            undefined
+            checkRelation<Media>(companyInfo?.logo)?.url || undefined
           }
           navigation={navigation}
         />
