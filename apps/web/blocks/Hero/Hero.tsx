@@ -1,5 +1,5 @@
 import { Post, Page, Media, HeroBlock } from 'types'
-import { checkRelation } from '@/utilities/checkRelation'
+import { checkRelation } from '@/utils/checkRelation'
 import { Container } from '@/components/Container'
 import { Hero as HeroComponent } from '@/components/Hero'
 

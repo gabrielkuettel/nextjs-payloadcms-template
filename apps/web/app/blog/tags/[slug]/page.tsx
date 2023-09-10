@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { BlogSection } from '@/components/BlogSection'
 import { getPostsByTag } from './queries'
 import { Container } from '@/components/Container'
-import { mapPosts } from '@/utilities/mapPosts'
+import { mapPosts } from '@/utils/mapPosts'
 import { HeaderSection } from '@/components/HeaderSection'
 
 type PageProps = {

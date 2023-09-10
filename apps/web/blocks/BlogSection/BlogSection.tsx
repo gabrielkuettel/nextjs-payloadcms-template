@@ -1,6 +1,6 @@
 import { BlogSectionBlock } from 'types'
 import { getPosts } from './BlogSection.queries'
-import { mapPosts } from '@/utilities/mapPosts'
+import { mapPosts } from '@/utils/mapPosts'
 import { BlogSection as BlogSectionComponent } from '@/components/BlogSection'
 import { Container } from '@/components/Container'
 

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
 import { getPage } from './queries'
-import { getPageSlug } from '@/utilities/getPageSlug'
+import { getPageSlug } from '@/utils/getPageSlug'
 import { Blocks } from '@/blocks/Blocks'
 
 type PageProps = {

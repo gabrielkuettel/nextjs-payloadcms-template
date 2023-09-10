@@ -2,7 +2,7 @@ import '../styles/global.css'
 import { Inter } from 'next/font/google'
 import { Media, Page } from 'types'
 
-import { checkRelation } from '@/utilities/checkRelation'
+import { checkRelation } from '@/utils/checkRelation'
 import { getPage } from './queries'
 import { MainMenu } from '@/components/MainMenu'
 import { Footer } from '@/components/Footer'

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { getPageSlug } from '@/utilities/getPageSlug'
+import { getPageSlug } from '@/utils/getPageSlug'
 import { getPage } from './queries'
 import { Post } from '@/components/Post'
 

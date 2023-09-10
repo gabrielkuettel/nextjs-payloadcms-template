@@ -1,7 +1,7 @@
 import { Post, User, Media, Tag } from 'types'
 
-import { mapPosts } from '@/utilities/mapPosts'
-import { checkRelation } from '@/utilities/checkRelation'
+import { mapPosts } from '@/utils/mapPosts'
+import { checkRelation } from '@/utils/checkRelation'
 import { Container } from '@/components/Container'
 import { Author } from '@/components/Author'
 import { RichText } from '@/components/RichText'

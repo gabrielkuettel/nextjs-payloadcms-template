@@ -1,6 +1,6 @@
 import qs from 'qs'
 import { Post, PaginatedDocs, Tag } from 'types'
-import { checkRelation } from '@/utilities/checkRelation'
+import { checkRelation } from '@/utils/checkRelation'
 
 import { rest } from '@/api/rest'
 

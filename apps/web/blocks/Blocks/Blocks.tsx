@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Page, HeaderSectionBlock, HeroBlock, BlogSectionBlock } from 'types'
 
-import { toKebabCase } from '@/utilities/toKebabCase'
+import { toKebabCase } from '@/utils/toKebabCase'
 import { Hero } from '@/blocks/Hero'
 import { HeaderSection } from '@/blocks/HeaderSection'
 import { BlogSection } from '@/blocks/BlogSection'
