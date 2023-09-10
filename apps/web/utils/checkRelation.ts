@@ -1,7 +1,7 @@
-import { isRelationship } from './isRelationship'
+import { isRelation } from './isRelation'
 
 export function checkRelation<Collection>(obj: any) {
-  if (!isRelationship(obj)) {
+  if (!isRelation(obj)) {
     return null
   }
 
