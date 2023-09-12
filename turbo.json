@@ -19,8 +19,7 @@
         "PAYLOAD_LOCAL_PORT",
         "PAYLOAD_SECRET",
         "PAYLOAD_PUBLIC_SITE_URL",
-        "PAYLOAD_PUBLIC_SERVER_URL",
-        "NEXT_PUBLIC_CMS_URL"
+        "PAYLOAD_PUBLIC_SERVER_URL"
       ],
       "outputs": ["dist/**", "build/**"]
     },
