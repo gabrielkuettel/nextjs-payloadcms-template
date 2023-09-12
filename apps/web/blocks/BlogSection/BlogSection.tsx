@@ -15,10 +15,6 @@ export async function BlogSection({
 }: BlogSectionProps) {
   const posts = await getPosts({ limit: Number(show) })
 
-  if (!posts || !posts.length) {
-    return null
-  }
-
   return (
     <Container
       horizontalPadding={horizontalPadding}
@@ -26,7 +22,7 @@ export async function BlogSection({
       topPadding={topPadding}
       fullWidth={fullWidth}
     >
-      <BlogSectionComponent posts={mapPosts(posts)} />
+      <BlogSectionComponent posts={mapPosts(posts || [])} />
     </Container>
   )
 }

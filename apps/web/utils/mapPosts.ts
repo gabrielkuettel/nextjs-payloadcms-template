@@ -8,8 +8,8 @@ export const mapPosts = (posts: Post[]) => {
     const publishedDate = post.publishedDate || ''
 
     const excerpt =
-      (post.content?.[0].children as { text: string }[])
-        .map((child) => child.text)
+      (post.content?.[0].children as { text: string }[] | undefined)
+        ?.map((child) => child.text)
         .join(' ') || ''
 
     const imageUrl = checkRelation<Media>(post.image)?.url || ''
