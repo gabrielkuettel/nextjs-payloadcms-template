@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 
-type ContainerProps = {
+type ContainerProps<T extends React.ElementType> = {
+  as?: T
   className?: string
   topPadding?: boolean
   bottomPadding?: boolean
@@ -9,30 +10,32 @@ type ContainerProps = {
   children: React.ReactNode
 }
 
-export function Container(props: ContainerProps) {
-  const {
-    className,
-    topPadding = false,
-    bottomPadding = false,
-    horizontalPadding = true,
-    fullWidth = false,
-    children,
-    ...rest
-  } = props
+export function Container<T extends React.ElementType = 'div'>({
+  as,
+  className,
+  topPadding = true,
+  bottomPadding = true,
+  horizontalPadding = true,
+  fullWidth = false,
+  children,
+  ...rest
+}: Omit<React.ComponentPropsWithoutRef<T>, keyof ContainerProps<T>> &
+  ContainerProps<T>) {
+  let Component = as ?? 'div'
 
   return (
-    <div
+    <Component
       className={clsx(
-        'mx-auto bg-white',
+        'mx-auto',
         fullWidth === false ? 'max-w-7xl' : '',
-        topPadding && 'pt-16 sm:pt-24 lg:pt-32',
-        bottomPadding && 'pb-16 sm:pb-24 lg:pb-32',
-        horizontalPadding && 'px-4 sm:px-6 lg:px-8',
-        className
+        horizontalPadding && 'px-6 lg:px-8',
+        topPadding && 'pt-16 sm:pt-12 lg:pt-16',
+        bottomPadding && 'pb-16 sm:pb-12 lg:pb-16',
+        className,
+        { ...rest }
       )}
-      {...rest}
     >
-      {children}
-    </div>
+      <div className="mx-auto max-w-2xl lg:max-w-none">{children}</div>
+    </Component>
   )
 }

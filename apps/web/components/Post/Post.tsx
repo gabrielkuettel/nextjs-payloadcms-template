@@ -30,11 +30,11 @@ export function Post({
             })`
           }}
         />
-        <Container className="z-10 flex justify-center">
-          <div className="absolute bottom-8 z-10 text-white lg:bottom-16">
+        <div className="absolute bottom-8 z-10 flex w-full flex-col items-center text-white lg:bottom-16">
+          <div>
             {post.author ? (
               <>
-                <div className="hidden sm:block">
+                <div className="hidden self-start sm:block">
                   <Author
                     avatarSrc={
                       checkRelation<Media>(
@@ -73,7 +73,7 @@ export function Post({
               {post.title}
             </h1>
           </div>
-        </Container>
+        </div>
       </div>
       <Container
         className="mt-4 flex flex-col items-center sm:mt-8"

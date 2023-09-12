@@ -1,12 +1,9 @@
 import { Block } from 'payload/types'
 
-import { display } from '../fields/display'
-
 export const BlogSection: Block = {
   slug: 'blogSection',
   interfaceName: 'BlogSectionBlock',
   fields: [
-    display,
     {
       name: 'show',
       label: 'Number of Posts to Show',

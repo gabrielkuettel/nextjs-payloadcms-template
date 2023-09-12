@@ -11,11 +11,7 @@ export function Hero({
   featuredPost,
   image,
   primaryAction,
-  secondaryAction,
-  horizontalPadding,
-  bottomPadding,
-  topPadding,
-  fullWidth
+  secondaryAction
 }: HeroProps) {
   const featured = {
     title: checkRelation<Post>(featuredPost)?.title || '',
@@ -45,12 +41,7 @@ export function Hero({
   const imageUrl = checkRelation<Media>(image)?.sizes?.feature?.url || ''
 
   return (
-    <Container
-      horizontalPadding={horizontalPadding}
-      bottomPadding={bottomPadding}
-      topPadding={topPadding}
-      fullWidth={fullWidth}
-    >
+    <Container topPadding={false}>
       <HeroComponent
         title={title}
         description={description}

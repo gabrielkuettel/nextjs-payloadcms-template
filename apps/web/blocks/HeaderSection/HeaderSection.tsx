@@ -6,19 +6,10 @@ export type HeaderSectionProps = HeaderSectionBlock
 
 export const HeaderSection: React.FC<HeaderSectionProps> = ({
   title,
-  description,
-  horizontalPadding,
-  bottomPadding,
-  topPadding,
-  fullWidth
+  description
 }) => {
   return (
-    <Container
-      horizontalPadding={horizontalPadding}
-      bottomPadding={bottomPadding}
-      topPadding={topPadding}
-      fullWidth={fullWidth}
-    >
+    <Container>
       <HeaderSectionComponent
         title={title || ''}
         description={description || ''}

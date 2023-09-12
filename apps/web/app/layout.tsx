@@ -1,4 +1,5 @@
 import '../styles/global.css'
+import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Media, Page } from 'types'
 import { redirect } from 'next/navigation'
@@ -12,6 +13,14 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter'
 })
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s - Initiate Agency',
+    default:
+      'Initiate Agency - A web development studio based in Bouder, Colorado'
+  }
+}
 
 export default async function RootLayout({
   children

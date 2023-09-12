@@ -23,17 +23,13 @@ export interface Config {
 export interface Page {
   id: string
   title: string
-  layout: (HeroBlock | HeaderSectionBlock | BlogSectionBlock)[]
+  layout: (HeroBlock | HeaderSectionBlock | BlogSectionBlock | DividerBlock)[]
   slug?: string
   updatedAt: string
   createdAt: string
   _status?: 'draft' | 'published'
 }
 export interface HeroBlock {
-  fullWidth?: boolean
-  horizontalPadding?: boolean
-  topPadding?: boolean
-  bottomPadding?: boolean
   featuredPost?: string | Post
   title?: string
   description?: string
@@ -132,10 +128,6 @@ export interface Tag {
   name?: string
 }
 export interface HeaderSectionBlock {
-  fullWidth?: boolean
-  horizontalPadding?: boolean
-  topPadding?: boolean
-  bottomPadding?: boolean
   title?: string
   description?: string
   id?: string
@@ -143,14 +135,15 @@ export interface HeaderSectionBlock {
   blockType: 'headerSection'
 }
 export interface BlogSectionBlock {
-  fullWidth?: boolean
-  horizontalPadding?: boolean
-  topPadding?: boolean
-  bottomPadding?: boolean
   show?: '3' | '6' | '9'
   id?: string
   blockName?: string
   blockType: 'blogSection'
+}
+export interface DividerBlock {
+  id?: string
+  blockName?: string
+  blockType: 'divider'
 }
 export interface Company {
   id: string
