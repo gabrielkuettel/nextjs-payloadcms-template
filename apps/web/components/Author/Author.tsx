@@ -3,6 +3,8 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import styles from './Author.module.css'
+
 type AuthorProps = {
   avatarSrc: string
   avatarAlt: string
@@ -30,7 +32,7 @@ export function Author({
       className={clsx('group block flex-shrink-0 no-underline', className)}
     >
       <div className="flex items-center">
-        <div>
+        <div className={styles.avatar}>
           <Image
             className={clsx(
               darkMode ? 'ring-1 ring-neutral-100' : '',

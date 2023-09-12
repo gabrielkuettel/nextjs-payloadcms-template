@@ -76,16 +76,14 @@ export const PostCard: React.FC<PostProps> = ({
             {excerpt}
           </p>
         </div>
-        {author?.imageUrl && (
-          <Author
-            avatarSrc={author?.imageUrl || ''}
-            avatarAlt={author?.name || ''}
-            name={author?.name || ''}
-            href={`/blog/authors/${author?.slug}`}
-            size="sm"
-            className="mt-4"
-          />
-        )}
+        <Author
+          avatarSrc={author?.imageUrl || ''}
+          avatarAlt={author?.name || ''}
+          name={author?.name || ''}
+          href={`/blog/authors/${author?.slug}`}
+          size="sm"
+          className="mt-4"
+        />
       </div>
     </article>
   )

@@ -1,0 +1,27 @@
+.avatar {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .avatar img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.avatar img::after {
+    content: attr(alt);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: theme('colors.paper.200');
+    background-color: theme('colors.paper.900');
+    white-space: pre;
+    padding-left: calc(50% - 0.5ch);
+    font-family: monospace;
+    letter-spacing: 2rem;
+  }

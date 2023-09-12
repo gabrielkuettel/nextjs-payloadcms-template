@@ -23,14 +23,14 @@ export function Post({
       <div className="relative h-96 shadow-xl md:h-[400px] lg:h-[500px]">
         <div className="from-primary-950 absolute h-full w-full bg-gradient-to-t to-transparent"></div>
         <div
-          className="h-full w-full bg-fixed bg-center bg-no-repeat"
+          className="h-full w-full bg-cover bg-fixed bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${
               checkRelation<Media>(post.image)?.url || ''
             })`
           }}
         />
-        <Container className="z-10">
+        <Container className="z-10 flex justify-center">
           <div className="absolute bottom-8 z-10 text-white lg:bottom-16">
             {post.author ? (
               <>
@@ -69,13 +69,16 @@ export function Post({
                 </div>
               </>
             ) : null}
-            <h1 className="pr-6 text-3xl font-bold lg:pr-12 lg:text-5xl">
+            <h1 className="max-w-2xl text-3xl font-bold lg:text-5xl">
               {post.title}
             </h1>
           </div>
         </Container>
       </div>
-      <Container className="mt-4 sm:mt-8" bottomPadding>
+      <Container
+        className="mt-4 flex flex-col items-center sm:mt-8"
+        bottomPadding
+      >
         <RichText content={post.content} className="mt-8 max-w-2xl sm:mt-16" />
         {post.tags?.length ? (
           <div className="mt-8 sm:mt-16">
