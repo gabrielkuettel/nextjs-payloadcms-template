@@ -1,6 +1,7 @@
 import '../styles/global.css'
 import { Inter } from 'next/font/google'
 import { Media, Page } from 'types'
+import { redirect } from 'next/navigation'
 
 import { checkRelation } from '@/utils/checkRelation'
 import { getPage } from './queries'
@@ -19,11 +20,11 @@ export default async function RootLayout({
 }) {
   const { menu, companyInfo } = await getPage()
 
-  if (!menu || !menu.navItems) {
-    throw new Error('No menu found')
+  if (!menu || !menu.navItems || !companyInfo) {
+    console.warn('No menu or company info found. Redirecting to CMS admin.')
+    redirect(process.env.NEXT_PUBLIC_CMS_URL + `/admin`)
   }
 
-  /** @todo map this to mapMainMenu */
   const navigation = menu.navItems.map((item) => ({
     name: item.link.label,
     href:
