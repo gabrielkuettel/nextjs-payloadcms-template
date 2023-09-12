@@ -9,6 +9,7 @@ export function Hero({
   title = '',
   description = '',
   featuredPost,
+  image,
   primaryAction,
   secondaryAction,
   horizontalPadding,
@@ -41,6 +42,8 @@ export function Hero({
     external: secondaryAction?.type === 'custom'
   }
 
+  const imageUrl = checkRelation<Media>(image)?.sizes?.feature?.url || ''
+
   return (
     <Container
       horizontalPadding={horizontalPadding}
@@ -51,6 +54,7 @@ export function Hero({
       <HeroComponent
         title={title}
         description={description}
+        imageUrl={imageUrl}
         featuredPost={featured}
         primaryAction={primary}
         secondaryAction={secondary}

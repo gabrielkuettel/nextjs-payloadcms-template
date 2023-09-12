@@ -37,6 +37,7 @@ export interface HeroBlock {
   featuredPost?: string | Post
   title?: string
   description?: string
+  image?: string | Media
   primaryAction: {
     type?: 'reference' | 'custom'
     reference: {
