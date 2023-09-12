@@ -38,7 +38,7 @@ export function Hero({
     external: secondaryAction?.type === 'custom'
   }
 
-  const imageUrl = checkRelation<Media>(image)?.sizes?.feature?.url || ''
+  const imageUrl = checkRelation<Media>(image)?.url || ''
 
   return (
     <Container topPadding={false}>

@@ -118,7 +118,13 @@ export function Hero({
         </div>
         <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
           <div className="relative aspect-[3/2] w-full lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
-            <Image className="object-cover" src={imageUrl} fill alt="" />
+            <Image
+              className="object-cover"
+              src={imageUrl}
+              fill
+              alt=""
+              sizes="(max-width: 724px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
           </div>
         </div>
       </div>
