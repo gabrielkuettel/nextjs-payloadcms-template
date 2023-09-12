@@ -16,7 +16,7 @@ export const rest = async <T>(
         ...options?.headers
       },
       next: {
-        revalidate: 0
+        revalidate: 10
       },
       ...options
     })
