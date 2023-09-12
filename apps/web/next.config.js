@@ -4,7 +4,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'nextjs-payloadcms-template-68ef096.payloadcms.app'
+        hostname: 'earth-protect.payloadcms.app/'
       }
     ],
     domains: ['localhost', 'tailwindui.com']
