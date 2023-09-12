@@ -1,15 +1,23 @@
 import React from 'react'
-import { Page, HeaderSectionBlock, HeroBlock, BlogSectionBlock } from 'types'
+import {
+  Page,
+  HeaderSectionBlock,
+  HeroBlock,
+  BlogSectionBlock,
+  DividerBlock
+} from 'types'
 
 import { toKebabCase } from '@/utils/toKebabCase'
 import { Hero } from '@/blocks/Hero'
 import { HeaderSection } from '@/blocks/HeaderSection'
 import { BlogSection } from '@/blocks/BlogSection'
+import { Divider } from '@/blocks/Divider'
 
 type BlockTypes =
   | HeaderSectionBlock['blockType']
   | HeroBlock['blockType']
   | BlogSectionBlock['blockType']
+  | DividerBlock['blockType']
 
 type BlockComponents = {
   [key in BlockTypes]: (
@@ -20,7 +28,8 @@ type BlockComponents = {
 const blockComponents: BlockComponents = {
   hero: Hero,
   blogSection: BlogSection,
-  headerSection: HeaderSection
+  headerSection: HeaderSection,
+  divider: Divider
 }
 
 export const Blocks: React.FC<{
@@ -42,7 +51,9 @@ export const Blocks: React.FC<{
         }
 
         const Block = blockComponents[blockType]
-
+        /** @ts-ignore
+         * @ts-expect-error * Async Server Component
+         */
         return <Block id={toKebabCase(blockName || id)} {...block} key={id} />
       })}
     </>
