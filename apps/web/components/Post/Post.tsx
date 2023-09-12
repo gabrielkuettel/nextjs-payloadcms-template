@@ -1,4 +1,6 @@
 import { Post, User, Media, Tag } from 'types'
+import Link from 'next/link'
+import Image from 'next/image'
 
 import { mapPosts } from '@/utils/mapPosts'
 import { checkRelation } from '@/utils/checkRelation'
@@ -18,6 +20,29 @@ export function Post({
   primaryTag: string
   relatedPosts?: Post[]
 }) {
+  function renderSDGs() {
+    return post.SDGs?.map((SDG) => {
+      if (typeof SDG === 'string') {
+        return null
+      }
+
+      return (
+        <Link
+          href={`/blog/sdg/${SDG.slug}`}
+          key={SDG.slug}
+          className="relative mr-2 mt-2 h-12 w-12 shadow-lg sm:h-20 sm:w-20"
+        >
+          <Image
+            src={checkRelation<Media>(SDG.image)?.url || ''}
+            alt={SDG.name}
+            fill
+            sizes="(max-width: 1024px) 48px, 80px"
+          />
+        </Link>
+      )
+    })
+  }
+
   return (
     <article>
       <div className="relative h-96 shadow-xl md:h-[400px] lg:h-[500px]">
@@ -80,6 +105,12 @@ export function Post({
         bottomPadding
         topPadding={false}
       >
+        {post.SDGs && post.SDGs.length ? (
+          <div className="mt-8 max-w-2xl sm:mt-16">
+            <h3 className="text-md font-bold uppercase">Related SDGs:</h3>
+            <div className="flex flex-row flex-wrap">{renderSDGs()}</div>
+          </div>
+        ) : null}
         <RichText content={post.content} className="mt-4 max-w-2xl sm:mt-8" />
         {post.tags?.length ? (
           <div className="mt-8 sm:mt-16">

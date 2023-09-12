@@ -45,6 +45,13 @@ const Posts: CollectionConfig = {
       hasMany: true
     },
     {
+      name: 'SDGs',
+      label: 'Sustainable Development Goals',
+      type: 'relationship',
+      relationTo: 'sdg',
+      hasMany: true
+    },
+    {
       name: 'content',
       type: 'richText'
     }

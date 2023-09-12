@@ -1,4 +1,4 @@
-import { Post, User, Media, Tag } from 'types'
+import { Post, User, Media, Tag, Sdg } from 'types'
 import { checkRelation } from './checkRelation'
 
 export const mapPosts = (posts: Post[]) => {
@@ -27,6 +27,17 @@ export const mapPosts = (posts: Post[]) => {
         ''
     }
 
+    const SDGs = post.SDGs?.map((SDG) => {
+      const sdg = checkRelation<Sdg>(SDG)
+      const sdgImage = checkRelation<Media>(sdg?.image)
+
+      return {
+        name: sdg?.name || '',
+        slug: sdg?.slug || '',
+        imageUrl: sdgImage?.url || ''
+      }
+    })
+
     return {
       ...post,
       imageUrl,
@@ -35,7 +46,8 @@ export const mapPosts = (posts: Post[]) => {
       slug,
       title,
       publishedDate,
-      excerpt
+      excerpt,
+      SDGs
     }
   })
 }

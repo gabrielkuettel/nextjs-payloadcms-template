@@ -14,6 +14,7 @@ export interface Config {
     tags: Tag
     users: User
     media: Media
+    sdg: Sdg
   }
   globals: {
     company: Company
@@ -65,6 +66,7 @@ export interface Post {
   image?: string | Media
   category?: string | Category
   tags?: string[] | Tag[]
+  SDGs?: string[] | Sdg[]
   content?: {
     [k: string]: unknown
   }[]
@@ -126,6 +128,12 @@ export interface Tag {
   id: string
   slug?: string
   name?: string
+}
+export interface Sdg {
+  id: string
+  slug?: string
+  name: string
+  image?: string | Media
 }
 export interface HeaderSectionBlock {
   title?: string
