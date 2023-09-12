@@ -78,8 +78,9 @@ export function Post({
       <Container
         className="mt-4 flex flex-col items-center sm:mt-8"
         bottomPadding
+        topPadding={false}
       >
-        <RichText content={post.content} className="mt-8 max-w-2xl sm:mt-16" />
+        <RichText content={post.content} className="mt-4 max-w-2xl sm:mt-8" />
         {post.tags?.length ? (
           <div className="mt-8 sm:mt-16">
             <Tags
