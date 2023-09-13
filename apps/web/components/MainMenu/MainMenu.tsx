@@ -26,7 +26,8 @@ export const MainMenu: React.FC<MenuProps> = ({
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          {/** @todo fix this, should link to "/" not "/home" */}
+          <Link href="/home" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
               width={32}
