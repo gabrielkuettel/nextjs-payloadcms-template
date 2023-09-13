@@ -51,7 +51,7 @@ export function Post({
           className="h-full w-full bg-cover bg-fixed bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${
-              checkRelation<Media>(post.image)?.url || ''
+              checkRelation<Media>(post.image)?.sizes?.feature || ''
             })`
           }}
         />
