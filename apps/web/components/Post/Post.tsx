@@ -100,42 +100,36 @@ export function Post({
           </div>
         </div>
       </div>
-      <Container
-        className="mt-4 flex flex-col items-center sm:mt-8"
-        bottomPadding
-        topPadding={false}
-      >
-        {post.SDGs && post.SDGs.length ? (
-          <div className="mt-8 max-w-2xl sm:mt-16">
-            <h3 className="text-md font-bold uppercase">Related SDGs:</h3>
-            <div className="flex flex-row flex-wrap">{renderSDGs()}</div>
-          </div>
-        ) : null}
-        <RichText
-          content={post.content}
-          className="mt-4 flex max-w-2xl flex-col items-center sm:mt-8"
-        />
-        {post.tags?.length ? (
-          <div className="mt-8 sm:mt-16">
-            <Tags
-              tags={post.tags.map((tag) => ({
-                name: checkRelation<Tag>(tag)?.name || '',
-                slug: checkRelation<Tag>(tag)?.slug || ''
-              }))}
-              className="text-sm no-underline"
-            />
-          </div>
-        ) : null}
-        {relatedPosts && relatedPosts.length && primaryTag ? (
-          <div className="mt-16 sm:mt-32">
-            <HeaderSection
-              title="Keep Reading"
-              description={`More posts related to '${primaryTag}'`}
-              className="mb-8"
-            />
-            <BlogSection posts={mapPosts(relatedPosts)} />
-          </div>
-        ) : null}
+      <Container className="mt-4 sm:mt-8" bottomPadding topPadding={false}>
+        <div className="flex flex-col items-center">
+          {post.SDGs && post.SDGs.length ? (
+            <div className="mt-4 max-w-2xl sm:mt-8">
+              <div className="flex flex-row flex-wrap">{renderSDGs()}</div>
+            </div>
+          ) : null}
+          <RichText content={post.content} className="mt-4 max-w-2xl sm:mt-8" />
+          {post.tags?.length ? (
+            <div className="mt-8 sm:mt-16">
+              <Tags
+                tags={post.tags.map((tag) => ({
+                  name: checkRelation<Tag>(tag)?.name || '',
+                  slug: checkRelation<Tag>(tag)?.slug || ''
+                }))}
+                className="text-sm no-underline"
+              />
+            </div>
+          ) : null}
+          {relatedPosts && relatedPosts.length && primaryTag ? (
+            <div className="mt-16 sm:mt-32">
+              <HeaderSection
+                title="Keep Reading"
+                description={`More posts related to '${primaryTag}'`}
+                className="mb-8"
+              />
+              <BlogSection posts={mapPosts(relatedPosts)} />
+            </div>
+          ) : null}
+        </div>
       </Container>
     </article>
   )
