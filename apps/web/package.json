@@ -15,6 +15,7 @@
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "@payloadcms/plugin-cloud": "^1.0.1",
+    "@payloadcms/plugin-form-builder": "^1.0.15",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "escape-html": "^1.0.3",
     "next": "^13.4.1",
