@@ -4,7 +4,8 @@ import {
   HeaderSectionBlock,
   HeroBlock,
   BlogSectionBlock,
-  DividerBlock
+  DividerBlock,
+  FormBlock
 } from 'types'
 
 import { toKebabCase } from '@/utils/toKebabCase'
@@ -12,12 +13,14 @@ import { Hero } from '@/blocks/Hero'
 import { HeaderSection } from '@/blocks/HeaderSection'
 import { BlogSection } from '@/blocks/BlogSection'
 import { Divider } from '@/blocks/Divider'
+import { Form } from '@/blocks/Form'
 
 type BlockTypes =
   | HeaderSectionBlock['blockType']
   | HeroBlock['blockType']
   | BlogSectionBlock['blockType']
   | DividerBlock['blockType']
+  | FormBlock['blockType']
 
 type BlockComponents = {
   [key in BlockTypes]: (
@@ -26,10 +29,11 @@ type BlockComponents = {
 }
 
 const blockComponents: BlockComponents = {
-  hero: Hero,
-  blogSection: BlogSection,
-  headerSection: HeaderSection,
-  divider: Divider
+  heroBlock: Hero,
+  blogSectionBlock: BlogSection,
+  headerSectionBlock: HeaderSection,
+  dividerBlock: Divider,
+  formBlock: Form
 }
 
 export const Blocks: React.FC<{
