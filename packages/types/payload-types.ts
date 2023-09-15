@@ -62,7 +62,7 @@ export interface HeroBlock {
   }
   id?: string
   blockName?: string
-  blockType: 'hero'
+  blockType: 'heroBlock'
 }
 export interface Post {
   id: string
@@ -140,18 +140,18 @@ export interface HeaderSectionBlock {
   description?: string
   id?: string
   blockName?: string
-  blockType: 'headerSection'
+  blockType: 'headerSectionBlock'
 }
 export interface BlogSectionBlock {
   show?: '3' | '6' | '9'
   id?: string
   blockName?: string
-  blockType: 'blogSection'
+  blockType: 'blogSectionBlock'
 }
 export interface DividerBlock {
   id?: string
   blockName?: string
-  blockType: 'divider'
+  blockType: 'dividerBlock'
 }
 export interface FormBlock {
   form: string | Form
