@@ -1,6 +1,7 @@
 import { buildConfig } from 'payload/config'
 import path from 'path'
 import { payloadCloud } from '@payloadcms/plugin-cloud'
+import formBuilder from '@payloadcms/plugin-form-builder'
 
 import { Pages } from './collections/Pages'
 import Categories from './collections/Categories'
@@ -30,5 +31,12 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql')
   },
-  plugins: [payloadCloud()]
+  plugins: [
+    payloadCloud(),
+    formBuilder({
+      fields: {
+        payment: false
+      }
+    })
+  ]
 })

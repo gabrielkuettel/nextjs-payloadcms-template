@@ -4,6 +4,7 @@ import { BlogSection } from '../blocks/BlogSection'
 import { HeaderSection } from '../blocks/HeaderSection'
 import { Hero } from '../blocks/Hero'
 import { Divider } from '../blocks/Divider'
+import { FormBlock } from '../blocks/FormBlock'
 import { slugField } from '../fields/slug'
 
 export const Pages: CollectionConfig = {
@@ -34,7 +35,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Hero, HeaderSection, BlogSection, Divider]
+              blocks: [Hero, HeaderSection, BlogSection, Divider, FormBlock]
             }
           ]
         }

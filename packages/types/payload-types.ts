@@ -14,6 +14,8 @@ export interface Config {
     tags: Tag
     users: User
     media: Media
+    forms: Form
+    'form-submissions': FormSubmission
   }
   globals: {
     company: Company
@@ -23,7 +25,13 @@ export interface Config {
 export interface Page {
   id: string
   title: string
-  layout: (HeroBlock | HeaderSectionBlock | BlogSectionBlock | DividerBlock)[]
+  layout: (
+    | HeroBlock
+    | HeaderSectionBlock
+    | BlogSectionBlock
+    | DividerBlock
+    | FormBlock
+  )[]
   slug?: string
   updatedAt: string
   createdAt: string
@@ -144,6 +152,145 @@ export interface DividerBlock {
   id?: string
   blockName?: string
   blockType: 'divider'
+}
+export interface FormBlock {
+  form: string | Form
+  enableIntro?: boolean
+  introContent: {
+    [k: string]: unknown
+  }[]
+  id?: string
+  blockName?: string
+  blockType: 'formBlock'
+}
+export interface Form {
+  id: string
+  title: string
+  fields?: (
+    | {
+        name: string
+        label?: string
+        width?: number
+        defaultValue?: string
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'text'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        defaultValue?: string
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'textarea'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        defaultValue?: string
+        options?: {
+          label: string
+          value: string
+          id?: string
+        }[]
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'select'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'email'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'state'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'country'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        defaultValue?: number
+        required?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'number'
+      }
+    | {
+        name: string
+        label?: string
+        width?: number
+        required?: boolean
+        defaultValue?: boolean
+        id?: string
+        blockName?: string
+        blockType: 'checkbox'
+      }
+    | {
+        message?: {
+          [k: string]: unknown
+        }[]
+        id?: string
+        blockName?: string
+        blockType: 'message'
+      }
+  )[]
+  submitButtonLabel?: string
+  confirmationType?: 'message' | 'redirect'
+  confirmationMessage: {
+    [k: string]: unknown
+  }[]
+  redirect?: {
+    url: string
+  }
+  emails?: {
+    emailTo?: string
+    cc?: string
+    bcc?: string
+    replyTo?: string
+    emailFrom?: string
+    subject: string
+    message?: {
+      [k: string]: unknown
+    }[]
+    id?: string
+  }[]
+  updatedAt: string
+  createdAt: string
+}
+export interface FormSubmission {
+  id: string
+  form: string | Form
+  submissionData?: {
+    field: string
+    value: string
+    id?: string
+  }[]
+  updatedAt: string
+  createdAt: string
 }
 export interface Company {
   id: string
