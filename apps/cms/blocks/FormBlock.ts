@@ -5,8 +5,8 @@ export const FormBlock: Block = {
   slug: 'formBlock',
   interfaceName: 'FormBlock',
   labels: {
-    singular: 'Form Block',
-    plural: 'Form Blocks'
+    singular: 'Form',
+    plural: 'Forms'
   },
   graphQL: {
     singularName: 'FormBlock'

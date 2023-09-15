@@ -1,7 +1,7 @@
 import { Block } from 'payload/types'
 
 export const HeaderSection: Block = {
-  slug: 'headerSection',
+  slug: 'headerSectionBlock',
   interfaceName: 'HeaderSectionBlock',
   fields: [
     {

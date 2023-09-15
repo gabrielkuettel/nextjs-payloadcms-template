@@ -3,7 +3,7 @@ import link from '../fields/link'
 import { image } from '../fields/image'
 
 export const Hero: Block = {
-  slug: 'hero',
+  slug: 'heroBlock',
   interfaceName: 'HeroBlock',
   fields: [
     {
