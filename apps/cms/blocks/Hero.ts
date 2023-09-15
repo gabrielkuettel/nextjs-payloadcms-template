@@ -5,6 +5,10 @@ import { image } from '../fields/image'
 export const Hero: Block = {
   slug: 'heroBlock',
   interfaceName: 'HeroBlock',
+  labels: {
+    singular: 'Hero',
+    plural: 'Heroes'
+  },
   fields: [
     {
       name: 'featuredPost',

@@ -3,6 +3,10 @@ import { Block } from 'payload/types'
 export const BlogSection: Block = {
   slug: 'blogSectionBlock',
   interfaceName: 'BlogSectionBlock',
+  labels: {
+    singular: 'Blog Section',
+    plural: 'Blog Sections'
+  },
   fields: [
     {
       name: 'show',
