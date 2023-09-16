@@ -55,9 +55,7 @@ export const Blocks: React.FC<{
         }
 
         const Block = blockComponents[blockType]
-        /** @ts-ignore
-         * @ts-expect-error * Async Server Component
-         */
+
         return <Block id={toKebabCase(blockName || id)} {...block} key={id} />
       })}
     </>

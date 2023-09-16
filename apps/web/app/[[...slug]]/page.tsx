@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 
 import { getPage } from './queries'
 import { getPageSlug } from '@/utils/getPageSlug'
-import { Blocks } from '@/blocks/Blocks'
+import { Blocks } from '@/blocks'
 
 type PageProps = {
   params: { slug: string | string[] }
